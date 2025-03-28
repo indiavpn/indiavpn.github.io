@@ -1,4 +1,4 @@
-# 印度免费VPN | 3月28日20.7M/S|免费Shadowrocket/V2ray/SSR/Clash订阅节点地址分享  更新时间 2025-03-28 11:40:02
+# 印度免费VPN | 3月28日19M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址分享  更新时间 2025-03-28 11:42:59
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://indiavpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
