@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://indiavpn.github.io/news/article-85602.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Meta Tags -->
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>petite-vue源码剖析-逐行解读@vue-reactivity之effect</title>
+        <meta name="description" content="当我们通过effect将副函数向响应上下文注册后，副作用函数内访问响应式对象时即会自动收集依赖，并在相应的响应式属性发生变化后，自动触发副作用函数的执行。 // ./effect.ts  export" />
+        <link rel="icon" href="/assets/website/img/v2rayx/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="印度免费VPN 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://indiavpn.github.io/news/article-85602.htm" />
+    <meta property="og:site_name" content="印度免费VPN 节点订阅中文官网" />
+    <meta property="og:title" content="petite-vue源码剖析-逐行解读@vue-reactivity之effect" />
+    <meta property="og:image" content="https://indiavpn.github.io/uploads/20240905/b013e42d21246c3e2c172eb2d8eaecf2.webp" />
+        <meta property="og:release_date" content="2025-03-31T08:43:04" />
+    <meta property="og:updated_time" content="2025-03-31T08:43:04" />
+        <meta property="og:description" content="当我们通过effect将副函数向响应上下文注册后，副作用函数内访问响应式对象时即会自动收集依赖，并在相应的响应式属性发生变化后，自动触发副作用函数的执行。 // ./effect.ts  export" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="petite-vue源码剖析-逐行解读@vue-reactivity之effect">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXP0PN9SNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EXP0PN9SNQ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/">
+                        <span>印度免费VPN</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>petite-vue源码剖析-逐行解读@vue-reactivity之effect</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <img class="decoration-star" src="/assets/website/img/v2rayx/decoration-star.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<p>当我们通过<code>effect</code>将副函数向响应上下文注册后，副作用函数内访问响应式对象时即会自动收集依赖，并在相应的响应式属性发生变化后，自动触发副作用函数的执行。</p> <pre><code class="language-ts">// ./effect.ts  export funciton effect&lt;T = any&gt;(   fn: () =&gt; T,   options?: ReactiveEffectOptions ): ReactiveEffectRunner {   if ((fn as ReactiveEffectRunner).effect) {     fn = (fn as ReactiveEffectRunner).effect.fn   }    const _effect = new ReactiveEffect(fn)   if (options) {     extend(_effect, options)     if (options.scope) recordEffectScope(_effect, options.scope)   }   // 默认是马上执行副作用函数收集依赖，但可通过lazy属性延迟副作用函数的执行，延迟依赖收集。   if (!options || !options.lazy) {     _effect.run()   }   // 类型为ReactiveEffectRunner的runner是一个绑定this的函数   const runner = _effect.run.bind(_effect) as ReactiveEffectRunner   runner.effect = _effect   return runner }</code></pre> <p><code>effect</code>函数的代码十分少，主要流程是</p> <ol> <li>将基于副作用函数构建<code>ReactiveEffect</code>对象</li> <li>若为默认模式则马上调用<code>ReactiveEffect</code>对象的<code>run</code>方法执行副作用函数。</li> </ol> <p>不过这里我们有几个疑问</p> <ol> <li><code>ReactiveEffectRunner</code>是什么？</li> <li><code>ReactiveEffect</code>生成的对象究竟是什么？显然<code>ReactiveEffect</code>的<code>run</code>方法才是梦开始的地方，到底它做了些什么？</li> <li>针对配置项<code>scope</code>，<code>recordEffectScope</code>的作用？</li> </ol> <h2 id="reactiveeffectrunner是什么"><code>ReactiveEffectRunner</code>是什么？</h2> <pre><code class="language-ts">// ./effect.ts  // ReactiveEffectRunner是一个函数，而且有一个名为effect的属性且其类型为RectiveEffect export interface ReactiveEffectRunner&lt;T = any&gt; {   (): T   effect: ReactiveEffect }</code></pre> <h2 id="reactiveeffect生成的对象究竟是什么"><code>ReactiveEffect</code>生成的对象究竟是什么？</h2> <pre><code class="language-ts">// 用于记录位于响应上下文中的effect嵌套层次数 let effectTrackDepth = 0 // 二进制位，每一位用于标识当前effect嵌套层级的依赖收集的启用状态 export left trackOpBit = 1 // 表示最大标记的位数 const maxMarkerBits = 30  const effectStack: ReactiveEffect[] = [] let activeEffect: ReactiveEffect | undefined  export class ReactiveEffect&lt;T = any&gt; {   // 用于标识副作用函数是否位于响应式上下文中被执行   active = true   // 副作用函数持有它所在的所有依赖集合的引用，用于从这些依赖集合删除自身   deps: Dep[] = []   // 默认为false，而true表示若副作用函数体内遇到`foo.bar += 1`则无限递归执行自身，直到爆栈   allowRecurse?: boolean    constructor(     public fn: () =&gt; T,     public scheduler: EffectScheduler | null = null,     scope?: EffectScope | null   ) {     recordEffectScope(this, scope)   }    run() {     /**      * 若当前ReactiveEffect对象脱离响应式上下文，那么其对应的副作用函数被执行时不会再收集依赖，并且其内部访问的响应式对象发生变化时，也会自动触发该副作用函数的执行      */     if (!this.active) {       return this.fn()     }     // 若参与响应式上下文则需要先压栈     if (!effectStack.includes(this)) {       try {         // 压栈的同时必须将当前ReactiveEffect对象设置为活跃，即程序栈中当前栈帧的意义。         effectStack.push(activeEffect = this)         enableTracking()          trackOpBit = 1 &lt;&lt; ++effectTrackDepth          if (effectTrackDepth &lt;= maxMarkerBits) {           // 标记已跟踪过的依赖           initDepMarkers(this)         }         else {           cleanupEffect(this)         }          return this.fn()       }       finally {         if (effectTrackDepth &lt;= maxMarkerBits) {           /**            * 用于对曾经跟踪过，但本次副作用函数执行时没有跟踪的依赖，采取删除操作。            * 即，新跟踪的 和 本轮跟踪过的都会被保留。            */           finalizeDepMarkers(this)         }          trackOpBit = 1 &lt;&lt; --effectTrackDepth         resetTracking()         // 最后当然弹栈，把控制权交还给上一个栈帧咯         effectStack.pop()         const n = effectStack.length         activeEffect = n &gt; 0 ? effectStack[n - 1] : undefined         }     }      /**      * 让当前ReactiveEffect对象脱离响应式上下文，请记住这是一去不回头的操作哦！      */      stop() {       if (this.active) {         cleanupEffect(this)         this.active = false       }     }   } }</code></pre> <p>为应对嵌套<code>effect</code>内部将当前位于响应上下文的ReactiveEffect对象压入栈结构<code>effectStack: ReactiveEffect[]</code>，当当前副作用函数执行后再弹出栈。另外，虽然我们通过<code>effect</code>函数将副作用函数注册到响应上下文中，但我们仍能通过调用<code>stop</code>方法让其脱离响应上下文。</p> <pre><code class="language-ts">function cleanupEffect(effect: ReactiveEffect) {   const { deps } = effect   if (deps.length) {     // 将当前ReactiveEffect对象从它依赖的响应式属性的所有Deps中删除自己，那么当这些响应式属性发生变化时则不会遍历到当前的ReactiveEffect对象     for (let i = 0; i &lt; deps.length; ++i) {       deps[i].delete(effect)     }     // 当前ReactiveEffect对象不再参与任何响应了     deps.length = 0   } }</code></pre> <p>在执行副作用函数前和执行后我们会看到分别调用了<code>enableTracking()</code>和<code>resetTracking()</code>函数，它们分别表示<code>enableTracking()</code>执行后的代码将启用依赖收集，<code>resetTracking()</code>则表示后面的代码将在恢复之前是否收集依赖的开关执行下去。要理解它们必须结合<code>pauseTracking()</code>和实际场景说明：</p> <pre><code class="language-ts">let shouldTrack = true const trackStack: boolean[] = []  export function enableTracking() {   trackStack.push(shouldTrack)   shouldTrack = true }  export function resetTracking() {   const last = trackStack.pop()   shouldTrack = last === undefined ? true : last }  export function pauseTracking() {   trackStack.push(shouldTrack)   shouldTrack = false }</code></pre> <p>假设我们如下场景</p> <pre><code class="language-ts">const values = reactive([1,2,3]) effect(() =&gt; {   values.push(1) })</code></pre> <p>由于在执行<code>push</code>时内部会访问代理对象的<code>length</code>属性，并修改<code>length</code>值，因此会导致不断执行该副作用函数直到抛出异常<code>Uncaught RangeError: Maximum call stack size exceeded</code>，就是和<code>(function error(){ error() })()</code>不断调用自身导致栈空间不足一样的。而@vue/reactivity是采用如下方式处理</p> <pre><code class="language-ts">;(['push', 'pop', 'shift', 'unshift', 'splice'] as const).forEach(key =&gt; {   instrumentations[key] = function (this: unknown[], ...args: unknown[]) {     pauseTracking()     const res = (toRaw(this) as any)[key].apply(this, args)     resetTracking()     return res   } })</code></pre> <p>即通过<code>pauseTracking()</code>暂停<code>push</code>内部的发生意外的依赖收集，即<code>push</code>仅仅会触发以其他形式依赖<code>length</code>属性的副作用函数执行。然后通过<code>resetTracking()</code>恢复到之前的跟踪状态。</p> <p>最后在执行副作用函数<code>return this.fn()</code>前，居然有几句难以理解的语句</p> <pre><code class="language-ts">try {   trackOpBit = 1 &lt;&lt; ++effectTrackDepth    if (effectTrackDepth &lt;= maxMarkerBits) {     initDepMarkers(this)   }   else {     cleanupEffect(this)   }    return this.fn() } finally {   if (effectTrackDepth &lt;= maxMarkerBits) {     finalizeDepMarkers(this)   }    trackOpBit = 1 &lt;&lt; --effectTrackDepth }</code></pre> <p>我们可以将其简化为</p> <pre><code class="language-ts">try {   cleanupEffect(this)      return this.fn() } finally {}</code></pre> <p>为什么在执行副作用函数前需要清理所有依赖呢？我们可以考虑一下如下的情况:</p> <pre><code class="language-ts">const state = reactive({ show: true, values: [1,2,3] }) effect(() =&gt; {   if (state.show) {     console.log(state.values)   } }) setTimeout(() =&gt; {   state.values.push(4) }, 5000)  setTimeout(() =&gt; {   state.show = false }, 10000)  setTimeout(() =&gt; {   state.values.push(5) }, 15000)</code></pre> <p>一开始的时候副作用函数将同时依赖<code>show</code>和<code>values</code>，5秒后向<code>values</code>追加新值副作用函数马上被触发重新执行，再过10秒后<code>show</code>转变为<code>false</code>，那么<code>if(state.show)</code>无论如何运算都不成立，此时再对<code>values</code>追加新值若副作用函数再次被触发显然除了占用系统资源外，别无用处。<br /> 因此，在副作用函数执行前都会先清理所有依赖(<code>cleanupEffect</code>的作用)，然后在执行时重新收集。</p> <p>面对上述情况，先清理所有依赖再重新收集是必须的，但如下情况，这种清理工作反而增加无谓的性能消耗</p> <pre><code class="language-ts">const state = reactive({ show: true, values: [1,2,3] }) effect(() =&gt; {   console.log(state.values) })</code></pre> <p>@vue/reactivity给我们展示了一个非常优秀的处理方式，那么就是通过标识每个依赖集合的状态(新依赖和已经被收集过)，并对新依赖和已经被收集过两个标识进行对比筛选出已被删除的依赖项。</p> <h3 id="优化无用依赖清理算法">优化无用依赖清理算法</h3> <pre><code class="language-ts">export type Dep = Set&lt;ReactiveEffect&gt; &amp; Trackedmarkers  type TrackedMarkers = {   /**    * wasTracked的缩写，采用二进制格式，每一位表示不同effect嵌套层级中，该依赖是否已被跟踪过(即在上一轮副作用函数执行时已经被访问过)    */    w: number   /**    * newTracked的缩写，采用二进制格式，每一位表示不同effect嵌套层级中，该依赖是否为新增(即在本轮副作用函数执行中被访问过)    */    n: number }  export const createDep = (effects) =&gt; {   const dep = new Set&lt;ReactiveEffect&gt;(effects) as Dep   // 虽然TrackedMarkers标识是位于响应式对象属性的依赖集合上，但它每一位仅用于表示当前执行的副作用函数是否曾经访问和正在访问该响应式对象属性   dep.w = 0   dep.n = 0    return dep }  export const wasTracked = (dep: Dep): boolean =&gt; (dep.w &amp; trackOpBit) &gt; 0  export const newTracked = (dep: Dep): boolean =&gt; (dep.n &amp; trackOpBit) &gt; 0  /**  * 将当前副作用函数的依赖标记为 `已经被收集`  */ export const initDepMarkers = ({ deps }: ReactiveEffect) =&gt; {   if (deps.length) {     for (let i = 0; i &lt; deps.length; i++) {       deps[i].w |= trackOpBit     }   } }  /**  * 用于对曾经跟踪过，但本次副作用函数执行时没有跟踪的依赖，采取删除操作。  * 即，新跟踪的 和 本轮跟踪过的都会被保留。  */ export const finalizeDepMarkers = (effect: ReactiveEffect) =&gt; {   const { deps } = effect   if (deps.length) {     let ptr = 0     for (let i = 0; i &lt; deps.length; i++) {       const dep = deps[i]       if (wasTracked(dep) &amp;&amp; !newTracked(dep)) {         // 对于曾经跟踪过，但本次副作用函数执行时没有跟踪的依赖，采取删除操作。         dep.delete(effect)       }       else {         // 缩小依赖集合的大小         deps[ptr++] = dep       }       // 将w和n中对应的嵌套层级的二进制位置零，如果缺少这步后续副作用函数重新执行时则无法重新收集依赖。       dep.w &amp;= ~trackOpBit       dep.n &amp;= ~trackOpBit     }     // 缩小依赖集合的大小     deps.length = ptr   } }</code></pre> <pre><code class="language-ts">// 在位于响应式上下文执行的副作用函数内，访问响应式对象属性，将通过track收集依赖 export function track(target: object, type: TrackOpTypes, key: unknown) {   if (!isTracking()) {     return   }    // targetMap用于存储响应式对象-对象属性的键值对   // depsMap用于存储对象属性-副作用函数集合的键值对   let depsMap = targetMap.get(target)   if (!depsMap) {     target.set(target, (depsMap = new Map()))   }   let dep = depsMap.get(key)   if (!dep) {     depsMap.set(key, (dep = createDep()))   }    trackEffects(dep) }  // 收集依赖 export function trackEffects(   dep: Dep ) {   let shouldTrack = false   if (effectTrackDepth &lt;= maxMarkerBits) {     // 如果本轮副作用函数执行过程中已经访问并收集过，则不用再收集该依赖     if (!newTracked(dep)) {       dep.n |= trackOpBit       shouldTrack = !wasTracked(dep)     }   }   else {     // 对于全面清理的情况，如果当前副作用函数对应的ReactiveEffect对象不在依赖集合中，则标记为true     shouldTrack = !dep.has(activeEffect!)   }    if (shouldTrack) {     dep.add(activeEffect!)     activeEffect!.deps.push(dep)   } }</code></pre> <p>单单从代码实现角度能难理解这个优化方式，不如我们从实际的例子出发吧！</p> <pre><code class="language-ts">const runAync = fn =&gt; setTimeout(fn, 1000)  const state = reactive({ show: true, values: [1,2,3] }) // 1 effect(() =&gt; {   if (state.show) {     console.log(state.values)   } })  // 2 runAync(() =&gt; {   state.values.push(4) })  // 3 runAync(() =&gt; {   state.show = false })</code></pre> <ol> <li>首次执行副作用函数<br /> a.<code>effectTrackDepth</code>为0，因此<code>1 &lt;&lt; ++effectTrackDepth</code>得到的<code>effectTrackDepth</code>和<code>trackOpBit</code>均为1，但由于此时副作用函数还没有收集依赖，因此<code>initDepMarkers</code>函数没有任何效果；<br /> b. 访问<code>state.show</code>时由于之前没有收集过响应式对象<code>state</code>的<code>show</code>属性，因此会调用<code>createDep</code>创建<code>w</code>和<code>n</code>均为0的依赖集合，并调用<code>trackEffects</code>发现<code>newTracked(dep)</code>为未跟踪过，则将<code>n</code>设置为1，然后开始收集依赖；<br /> c. 访问<code>state.values</code>会重复第2步的操作；<br /> d. 由于<code>state.show</code>和<code>state.values</code>都是新跟踪的(<code>n</code>为1)，因此在<code>finalizeDepMarkers</code>处理后仍然将副作用函数保留在这两个属性对应的依赖集合中。</li> <li>执行<code>state.values.push(4)</code>触发副作用函数变化<br /> a.<code>effectTrackDepth</code>为0，因此<code>1 &lt;&lt; ++effectTrackDepth</code>得到的<code>effectTrackDepth</code>和<code>trackOpBit</code>均为1，此时副作用函数已经收集过依赖，因此<code>initDepMarkers</code>将该副作用函数所在的依赖集合都都标记为已收集过(<code>w</code>为1)；<br /> b. 访问<code>state.show</code>时会调用<code>trackEffects</code>发现<code>newTracked(dep)</code>为未跟踪过(在<code>finalizeDepMarkers</code>中已被置零)，则将<code>n</code>设置为1，然后开始收集依赖；<br /> c. 访问<code>state.values</code>会重复第2步的操作；<br /> d. 由于<code>state.show</code>和<code>state.values</code>都是新跟踪的(<code>n</code>为1)，因此在<code>finalizeDepMarkers</code>处理后仍然将副作用函数保留在这两个属性对应的依赖集合中。</li> <li>执行<code>state.show = false</code>触发副作用函数变化<br /> a.<code>effectTrackDepth</code>为0，因此<code>1 &lt;&lt; ++effectTrackDepth</code>得到的<code>effectTrackDepth</code>和<code>trackOpBit</code>均为1，此时副作用函数已经收集过依赖，因此<code>initDepMarkers</code>将该副作用函数所在的依赖集合都都标记为已收集过(<code>w</code>为1)；<br /> b. 访问<code>state.show</code>时会调用<code>trackEffects</code>发现<code>newTracked(dep)</code>为未跟踪过(在<code>finalizeDepMarkers</code>中已被置零)，则将<code>n</code>设置为1，然后开始收集依赖；<br /> c. 由于<code>state.values</code>没有标记为新跟踪的(<code>n</code>为0)，因此在<code>finalizeDepMarkers</code>处理后会将副作用函数从<code>state.values</code>对应的依赖集合中移除，仅保留在<code>state.values</code>对应的依赖集合中。</li> </ol> <p>到这里，我想大家已经对这个优化有更深的理解了。那么接下来的问题自然而然就是为什么要硬编码将优化算法启动的嵌套层级设置为<code>maxMarkerBits = 30</code>？</p> <h3 id="smi优化原理">SMI优化原理</h3> <p>首先<code>maxMarkerBits = 30</code>表示仅支持effect嵌套31层，注释中描述该值是因为想让JavaScript影响使用SMI。那么什么是SMI呢？</p> <p>由于ECMAScript标准约定<code>number</code>数字需要转换为64位双精度浮点数处理，但所有数字都用64位存储和处理是十分低效的，所以V8内部采用其它内存表示方式（如32位）然后向外提供64位表现的特性即可。其中数组合法索引范围是<code>[0, 2^32 - 2]</code>，V8引擎就是采用32位的方式来存储这些合法的下标数字。另外，所有在<code>[0, 2^32 - 2]</code>内的数字都会优先使用32位二进制补码的方式存储。</p> <p>针对32位有符号位范围内的整型数字V8为其定义了一种特殊的表示法<code>SMI</code>(非<code>SMI</code>的数字则被定义为<code>HeapNumber</code>)，而V8引擎针对SMI启用特殊的优化：<em>当使用SMI内的数字时，引擎不需要为其分配专门的内存实体，并会启用快速整型操作</em>。</p> <p>对于非<code>SMI</code>的数字</p> <pre><code class="language-js">let o = {   x: 42, // SMI   y: 4.2 // HeapNumber }</code></pre> <p>内存结构为<code>HeapNumber{ value: 4.2, address: 1 }</code>和<code>JSObject{ x: 42, y: 1 }</code>，由于x值类型为<code>SMI</code>因此直接存储在对象上，而y为<code>HeapNumber</code>则需要分配一个独立的内存空间存放，并通过指针让对象的y属性指向<code>HeapNumber</code>实例的内存空间。</p> <p>然而在修改值时，然后x为<code>SMI</code>所以可以原地修改内存中的值，而<code>HeapNumber</code>为不可变，因此必须再分配一个新的内存空间存放新值，并修改<code>o.y</code>中的内存地址。那么在没有启用<code>Mutable HeapNumber</code>时，如下代码将产生<code>1.1</code>、<code>1.2</code>和<code>1.3</code>3个临时实例。</p> <pre><code class="language-js">let o = { x: 1.1 } for (let i = 0; i &lt; 4; ++i) {   o.x += 1; }</code></pre> <p>有<code>SMI</code>是带符号位的，那么实际存储数字是31位，因此设置<code>maxMarkerBits = 30</code>且通过<code>if (effectTrackDepth &lt;= maxMarkerBits)</code>判断层级，即当effec嵌套到31层时不再使用无用依赖清理优化算法。而优化算法中采用的是二进制位对上一轮已收集和本轮收集的依赖进行比较，从而清理无用依赖。若<code>n</code>和<code>w</code>值所占位数超过31位则内部会采用<code>HeapNumber</code>存储，那么在位运算上性能将有所下降。</p> <p>其实我们还看到若<code>effectTrackDepth</code>等于31时还会执行<code>trackOpBit = 1 &lt;&lt; ++effectTrackDepth</code>，这会导致<code>trackOpBit</code>从<code>SMI</code>的存储方式转换为<code>HeapNumber</code>，那是不是可以加个判断修改成下面这样呢！</p> <pre><code class="language-ts">const maxMarkerBit = 1 &lt;&lt; 30  if (trackOpBit &amp; maxMarkerBit !== 1) {   trackOpBit = 1 &lt;&lt; ++effectTrackDepth }</code></pre> <h2 id="副作用函数触发器-trigger">副作用函数触发器-<code>trigger</code></h2> <p>由于在讲解"优化无用依赖清理算法"时已经对<code>track</code>进行了剖析，因此现在我们直接分析<code>trigger</code>就好了。</p> <pre><code class="language-ts">export function trigger(   target: object,   // set, add, delete, clear   type: TriggerOpTypes,   key?: unknown,   newValue?: unknown,   oldValue?: unknown,   oldTarget?: Map&lt;unknown, unknown&gt; | Set&lt;unknown&gt; ) {   const depsMap = targetMap.get(target)   if (!depsMap) {     // 该属性没有被任何副作用函数跟踪过，所以直接返回就好了     return   }    /**    * 用于存储将要被触发的副作用函数。    * 为什么不直接通过类似depsMap.values().forEach(fn =&gt; fn())执行副作用函数呢？    * 那是因为副作用函数执行时可能会删除或增加depsMap.values()的元素，导致其中的副作用函数执行异常。    * 因此用另一个变量存储将要执行的副作用函数集合，那么执行过程中修改的是depsMap.values()的元素，而正在遍历执行的副作用函数集合结构是稳定的。    */   let deps: (Dep | undefined)[] = []   if (type === TriggerOpTypes.CLEAR) {     // 对象的所有属性值清空，所有依赖该响应式对象的副作用函数都将被触发     deps = [...depsMap.values()]   }   else if (key === 'length' &amp;&amp; isArray(target)) {     // 若设置length属性，那么依赖length属性和索引值大于等于新的length属性值的元素的副作用函数都会被触发     depsMap.forEach((dep, key) =&gt; {       if (key === 'length' || key &gt;= (newValue as number)) {         deps.push(dep)       }     })   }   else {     // 将依赖该属性的     if (key !== void 0) {       // 即使插入的是undefined也没有关系       deps.push(depsMap.get(key))     }      /**      * 添加间接依赖的副作用函数      * 1. 新增数组新值索引大于数组长度时，会导致数组容量被扩充，length属性也会发生变化      * 2. 新增或删除Set/WeakSet/Map/WeakMap元素时，需要触发依赖迭代器的副作用函数      * 3. 新增或删除Map/WeakMap元素时，需要触发依赖键迭代器的副作用函数      * 4. 设置Map/WeakMap元素的值时，需要触发依赖迭代器的副作用函数      */      switch(type) {       case TriggerOpTypes.ADD:         if (!isArray(target)) {           // 对于非数组，则触发通过迭代器遍历的副作用函数           deps.push(depsMap.get(ITERATE_KEY))           if (isMap(target)) {             deps.push(depsMap.get(MAP_KEY_ITERATE_KEY))           }         }         else if (isIntegerKey(key)) {           // 对数组插入新元素，则需要触发依赖length的副作用函数           deps.push(depsMap.get('length'))         }         break       case TriggerOpTypes.DELETE:         if (!isArray(target)) {           // 对于非数组，则触发通过迭代器遍历的副作用函数           deps.push(depsMap.get(ITERATE_KEY))           if (isMap(target)) {             deps.push(depsMap.get(MAP_KEY_ITERATE_KEY))           }         }         break       case TriggerOpTypes.SET:         // 对于Map/WeakMap需要触发依赖迭代器的副作用函数         if (isMap(target)) {           deps.push(depsMap.get(ITERATE_KEY))         }     }      if (deps.length === 1) {       // 过滤掉undefined       if (deps[0]) {         triggerEffects(deps[0])       }     }     else {       const effects: ReactiveEffect[] = []       // 过滤掉undefined       for (const dep of deps) {         if (dep) {           effects.push(...dep)         }       }       triggerEffects(createDep(effects))     }   } }  export function triggerEffects(   dep: Dep | ReactiveEffect[] ) {   for (const effect of isArray(dep) ? dep : [...dep]) {     /**      * 必须保证将要触发的副作用函数(effect)不是当前运行的副作用函数(activeEffect)，否则将嵌入无限递归。      * 假设存在如下情况      * let foo = reactive({ bar: 1 })      * effect(() =&gt; {      *   foo.bar = foo.bar + 1      * })      * 若没有上述的保障，则将会不断递归下去直接爆栈。      *       * 假如ReactiveEffect对象的allowRecurse设置为true，那么表示不对上述问题作防御。      */      if (effect !== activeEffect || effect.allowRecurse) {       if (effect.scheduler) {         // 若设置有调度器则调用调用器         effect.scheduler()       }       else {         // 立即执行副作用函数         effect.run()       }     }   } }</code></pre> <h2 id="调度器">调度器</h2> <p>在上一节的<code>triggerEffects</code>中我们看到默认采用同步方式执行副作用函数，若要同步执行数十个副作用函数那么势必会影响当前事件循环主逻辑的执行，这时就是调度器闪亮登场的时候了。我们回顾以下petite-vue中提供的调度器吧!</p> <pre><code class="language-ts">import { effect as rawEffect } from '@vue/reactivity'  const effect = (fn) =&gt; {   const e: ReactiveEffectRunner = rawEffect(fn, {     scheduler: () =&gt; queueJob(e)   })   return e }</code></pre> <pre><code class="language-ts">// ./scheduler.ts  let queued = false const queue: Function[] = [] const p = Promise.resolve()  export const nextTick = (fn: () =&gt; void) =&gt; p.then(fn)  export const queueJob = (job: Function) =&gt; {   if (!queue.includes(job)) queue.push(job)   if (!queued) {     queued = true     nextTick(flushJobs)   } }  const flushJobs = () =&gt; {   for (const job of queue) {     job()   }   queue.length = 0   queued = false }</code></pre> <p>副作用函数压入队列中，并将遍历队列执行其中的副作用函数后清空队列的<code>flushJobs</code>压入micro queue。那么当前事件循环主逻辑执行完后，JavaScript引擎将会执行micro queue中的所有任务。</p> <h2 id="什么是effectscope">什么是<code>EffectScope</code>？</h2> <p>Vue 3.2引入新的<em>Effect scope API</em>，可自动收集<code>setup</code>函数中创建的<code>effect</code>、<code>watch</code>和<code>computed</code>等，当组件被销毁时自动销毁作用域(scope)和作用域下的这些实例(<code>effect</code>、<code>watch</code>和<code>computed</code>等)。这个API主要是提供给插件或库开发者们使用的，日常开发不需要用到它。</p> <p>还记得petite-vue中的context吗？当遇到<code>v-if</code>和<code>v-for</code>就会为每个子分支创建新的block实例和新的context实例，而子分支下的所有<code>ReactiveEffect</code>实例都将统一被对应的context实例管理，当block实例被销毁则会对对应的context实例下的<code>ReactiveEffect</code>实例统统销毁。</p> <p>block实例对应是DOM树中动态的部分，可以大概对应上Vue组件，而context实例就是这里的<code>EffectScope</code>对象了。</p> <p>使用示例：</p> <pre><code class="language-ts">cosnt scope = effectScope() scope.run(() =&gt; {   const state = reactive({ value: 1 })   effect(() =&gt; {     console.log(state.value)   }) }) scope.stop()</code></pre> <p>那么<code>effect</code>生成的<code>ReactiveEffect</code>实例是如何和scope关联呢？<br /> 那就是<code>ReactiveEffect</code>的构造函数中调用的<code>recordEffectScope(this, scope)</code></p> <pre><code class="language-ts">export function recordEffectScope(   effect: ReactiveEffect,   scope?: EffectScope | null ) {   // 默认将activeEffectScope和当前副作用函数绑定   scope = scope || activeEffectScope   if (scope &amp;&amp; scope.active) {     scope.effects.push(effect)   } }</code></pre> <h2 id="总结">总结</h2> <p>petite-vue中使用<em>@vue/reactivity</em>的部分算是剖析完成了，也许你会说<em>@vue/reactivity</em>可不止这些内容啊，这些内容我将会在后续的《vue-lit源码剖析》中更详尽的梳理分析，敬请期待。<br /> 下一篇我们将看看<code>eval</code>中是如何使用<code>new Function</code>和<code>with</code>来构造JavaScript解析执行环境的。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85601.htm">RBAC-基于角色的访问控制详解</a></p>
+                                        <p>下一个：<a href="/news/article-86317.htm">在广州哪里可以领养猫（广州哪里可以领养小猫）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-86318.htm" title="青岛哪家动物医院好（青岛动物医院 南京路）">青岛哪家动物医院好（青岛动物医院 南京路）</a></li>
+                        <li class="py-2"><a href="/news/article-83579.htm" title="瑞派宠物医院什么时候开门（瑞派宠物医院待遇怎么样）">瑞派宠物医院什么时候开门（瑞派宠物医院待遇怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-84174.htm" title="忠县宠物店给宠物洗澡（宠物店洗澡大概多少钱）">忠县宠物店给宠物洗澡（宠物店洗澡大概多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-84175.htm" title="豆腐丸子的做法视频(豆腐丸子的做法和配方)">豆腐丸子的做法视频(豆腐丸子的做法和配方)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe-links.htm" title="印度免费VPN | 4月1日18.8M/S|免费Shadowrocket/SSR/Clash/V2ray订阅节点地址分享">印度免费VPN | 4月1日18.8M/S|免费Shadowrocket/SSR/Clash/V2ray订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-v2ray.htm" title="印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享">印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-83578.htm" title="猫咪宠物疫苗有效期是多久（宠物猫疫苗大概多少钱）">猫咪宠物疫苗有效期是多久（宠物猫疫苗大概多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-85602.htm" title="petite-vue源码剖析-逐行解读@vue-reactivity之effect">petite-vue源码剖析-逐行解读@vue-reactivity之effect</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-clash-v2ray-ss-ssr.htm" title="印度免费VPN | 4月2日20.9M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点地址分享">印度免费VPN | 4月2日20.9M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-node-subscribe-links.htm" title="印度免费VPN | 3月29日18.1M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址分享">印度免费VPN | 3月29日18.1M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="p-small"><a href="/">印度免费VPN 节点订阅中文官网</a> 版权所有 Powered by WordPress</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayx/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayx/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayx/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayx/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayx/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayx/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
