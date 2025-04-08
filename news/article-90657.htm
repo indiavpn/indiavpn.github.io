@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://indiavpn.github.io/news/article-90657.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Meta Tags -->
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>vue解决vant组件样式失效问题</title>
+        <meta name="description" content="vue项目中引入vant组件，若发现vant组件样式失效，通常有以下几种解决方法：  方法一：引入全局样式    在引入vant组件的地方或者全局引入vant组件所有的样式，引入方法为：在vue引入v" />
+        <link rel="icon" href="/assets/website/img/v2rayx/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="印度免费VPN 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://indiavpn.github.io/news/article-90657.htm" />
+    <meta property="og:site_name" content="印度免费VPN 节点订阅中文官网" />
+    <meta property="og:title" content="vue解决vant组件样式失效问题" />
+    <meta property="og:image" content="https://indiavpn.github.io/uploads/20240905/0929692daf8392422ad8e129208c2f97.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:03:14" />
+    <meta property="og:updated_time" content="2025-04-07T09:03:14" />
+        <meta property="og:description" content="vue项目中引入vant组件，若发现vant组件样式失效，通常有以下几种解决方法：  方法一：引入全局样式    在引入vant组件的地方或者全局引入vant组件所有的样式，引入方法为：在vue引入v" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue解决vant组件样式失效问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXP0PN9SNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EXP0PN9SNQ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/">
+                        <span>印度免费VPN</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>vue解决vant组件样式失效问题</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <img class="decoration-star" src="/assets/website/img/v2rayx/decoration-star.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>vue项目中引入vant组件，若发现vant组件样式失效，通常有以下几种解决方法：</p> <ul> <li>方法一：引入全局样式</li> </ul> <p>  在引入vant组件的地方或者全局引入vant组件所有的样式，引入方法为：在vue引入vant的页面中，添加以下代码：</p> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token string">'vant/lib/index.css'</span></code></pre> <p>这样可以引入vant全部样式，不过通常我们可以按需引入，如法二，局部引入部分样式即可。</p> <ul> <li>方法二：局部引入样式</li> </ul> <p>  顾名思义，我们需要使用哪个组件，就引入哪个组件样式即可，比如我们只使用按钮组件，则只需要引入按钮样式，如下:</p> <pre><code class="prism language-javascript"><span class="token keyword">import</span><span class="token string">'vant/lib/button/style'</span></code></pre> <ul> <li>方法三：插件自动引入</li> </ul> <p>  babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式。第一步需要安装插件：</p> <pre><code class="prism language-javascript"># 安装插件 npm i babel<span class="token operator">-</span>plugin<span class="token operator">-</span><span class="token keyword">import</span><span class="token operator">-</span><span class="token constant">D</span></code></pre> <p>第二步在***.babelrc***或***babel.config.js***的对应位置添加如下代码，重启之后即可生效。</p> <pre><code class="prism language-javascript"><span class="token comment">// 在.babelrc 中添加配置</span><span class="token comment">// 注意：webpack 1 无需设置 libraryDirectory</span><span class="token punctuation">{<!-- --></span><span class="token string">"plugins"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"import"</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span><span class="token string">"libraryName"</span><span class="token punctuation">:</span><span class="token string">"vant"</span><span class="token punctuation">,</span><span class="token string">"libraryDirectory"</span><span class="token punctuation">:</span><span class="token string">"es"</span><span class="token punctuation">,</span><span class="token string">"style"</span><span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token comment">// 对于使用 babel7 的用户，可以在 babel.config.js 中配置</span> module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>   plugins<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'import'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>       libraryName<span class="token punctuation">:</span><span class="token string">'vant'</span><span class="token punctuation">,</span>       libraryDirectory<span class="token punctuation">:</span><span class="token string">'es'</span><span class="token punctuation">,</span>       style<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'vant'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90656.htm">C++内存泄漏的定位方法总结</a></p>
+                                        <p>下一个：<a href="/news/article-91128.htm">洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-84884.htm" title="广州宠物救助中心电话24小时（动物救援中心）">广州宠物救助中心电话24小时（动物救援中心）</a></li>
+                        <li class="py-2"><a href="/news/article-91129.htm" title="宝宝被猫抓了一下红色划痕要打针吗（宝宝被猫抓了一下红色划痕要打针吗图片）">宝宝被猫抓了一下红色划痕要打针吗（宝宝被猫抓了一下红色划痕要打针吗图片）</a></li>
+                        <li class="py-2"><a href="/news/article-89877.htm" title="重庆宠物领养网免费平台电话是多少（重庆宠物之家免费领养）">重庆宠物领养网免费平台电话是多少（重庆宠物之家免费领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-v2ray.htm" title="印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享">印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-83579.htm" title="瑞派宠物医院什么时候开门（瑞派宠物医院待遇怎么样）">瑞派宠物医院什么时候开门（瑞派宠物医院待遇怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-84175.htm" title="豆腐丸子的做法视频(豆腐丸子的做法和配方)">豆腐丸子的做法视频(豆腐丸子的做法和配方)</a></li>
+                        <li class="py-2"><a href="/news/article-88416.htm" title="小动物打什么针（小动物打什么针可以死）">小动物打什么针（小动物打什么针可以死）</a></li>
+                        <li class="py-2"><a href="/news/article-88417.htm" title="淮北宠物店（淮北宠物店招聘）">淮北宠物店（淮北宠物店招聘）</a></li>
+                        <li class="py-2"><a href="/news/article-87764.htm" title="国内兽药厂家排名前十强 国内兽药厂家排名前十强有生产猫驱虫药吗">国内兽药厂家排名前十强 国内兽药厂家排名前十强有生产猫驱虫药吗</a></li>
+                        <li class="py-2"><a href="/news/article-91128.htm" title="洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）">洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small"><a href="/">印度免费VPN 节点订阅中文官网</a> 版权所有 Powered by WordPress</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayx/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayx/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayx/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayx/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayx/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayx/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
