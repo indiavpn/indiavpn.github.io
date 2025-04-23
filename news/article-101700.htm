@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://indiavpn.github.io/news/article-101700.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Meta Tags -->
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>SpringSecurity之OAuth2 令牌accessToken的生成过程</title>
+        <meta name="description" content="使用过SpringSecurity Oauth2的小伙伴都知道，authorization_code、password、client_credentials、refresh_token几种授权模式获取" />
+        <link rel="icon" href="/assets/website/img/v2rayx/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="印度免费VPN 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://indiavpn.github.io/news/article-101700.htm" />
+    <meta property="og:site_name" content="印度免费VPN 节点订阅中文官网" />
+    <meta property="og:title" content="SpringSecurity之OAuth2 令牌accessToken的生成过程" />
+    <meta property="og:image" content="https://indiavpn.github.io/uploads/20240905/b013e42d21246c3e2c172eb2d8eaecf2.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:25:29" />
+    <meta property="og:updated_time" content="2025-04-22T08:25:29" />
+        <meta property="og:description" content="使用过SpringSecurity Oauth2的小伙伴都知道，authorization_code、password、client_credentials、refresh_token几种授权模式获取" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringSecurity之OAuth2 令牌accessToken的生成过程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXP0PN9SNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EXP0PN9SNQ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/">
+                        <span>印度免费VPN</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>SpringSecurity之OAuth2 令牌accessToken的生成过程</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <img class="decoration-star" src="/assets/website/img/v2rayx/decoration-star.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>使用过SpringSecurity Oauth2的小伙伴都知道，authorization_code、password、client_credentials、refresh_token几种授权模式获取token调用的接口都是/oauth/token，同时也都需要携带 client_id、client_secret 两个参数，或者说携带请求头</p> <pre><code>Authorization: Basic base64Encode(client_id_value:client_secret_value)</code></pre> <p>这里的 Basic token 对应由 SpringSecurity 的过滤器 BasicAuthenticationFilter 进行验证处理。</p> <h2>1 BasicAuthenticationFilter</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不同版本的springcloud中，doFilterInternal 的实现写法可能不同，但是核心逻辑是一样的。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;了解 SpringSecurity 认证机制的小伙伴们看到下面的 authenticationManager.authenticate()方法就可以知道，这个过滤器用 client_id和client_secret 作为用户名和密码进行了一次认证，而对应的provider用来查询用户信息的实际就是ClientDetailsUserDetailsService。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在认证成功后将client的认证信息放在了SecurityContextHolder的线程变量中。</p> <pre><code class="language-java">protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {         try {             UsernamePasswordAuthenticationToken authRequest = this.authenticationConverter.convert(request);             if (authRequest == null) {                 this.logger.trace("Did not process authentication request since failed to find username and password in Basic Authorization header");                 chain.doFilter(request, response);                 return;             }              String username = authRequest.getName();             this.logger.trace(LogMessage.format("Found username '%s' in Basic Authorization header", username));             if (this.authenticationIsRequired(username)) {                  //核心代码                 Authentication authResult = this.authenticationManager.authenticate(authRequest);                 SecurityContext context = SecurityContextHolder.createEmptyContext();                 context.setAuthentication(authResult);                 SecurityContextHolder.setContext(context);                 if (this.logger.isDebugEnabled()) {                     this.logger.debug(LogMessage.format("Set SecurityContextHolder to %s", authResult));                 }                  this.rememberMeServices.loginSuccess(request, response, authResult);                 this.onSuccessfulAuthentication(request, response, authResult);             }         } catch (AuthenticationException var8) {             SecurityContextHolder.clearContext();             this.logger.debug("Failed to process authentication request", var8);             this.rememberMeServices.loginFail(request, response);             this.onUnsuccessfulAuthentication(request, response, var8);             if (this.ignoreFailure) {                 chain.doFilter(request, response);             } else {                 this.authenticationEntryPoint.commence(request, response, var8);             }              return;         }          chain.doFilter(request, response);     }</code></pre> <h2>2&nbsp;TokenEndpoint</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与一般的认证流程略有不同，上面的 this.onSuccessfulAuthentication(request, response, authResult);是空实现，因此，认证成功后，过滤器就会放行，然后请求进入TokenEndpoint。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当我们看到下面的代码的@RequestMapping就知道，这里一定就是生成token的入口了。可能有部分小伙伴会疑惑，为什么TokenEndpoint的注解是@FrameworkEndpoint而不是@Controller，看到@Component也就恍然了。</p> <pre><code class="language-java">@Component @Retention(RetentionPolicy.RUNTIME) @Target(ElementType.TYPE) public @interface FrameworkEndpoint {  }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postAccessToken()方法的入参有两个，parameters 比较好理解，就是request中的参数，而 principal 其实就是从 SecurityContextHolder线程变量拿到的上一步的认证信息</p> <pre><code class="language-java">@FrameworkEndpoint public class TokenEndpoint extends AbstractEndpoint {         ......      @RequestMapping( value = {"/oauth/token"},method = {RequestMethod.POST})     public ResponseEntity&lt;OAuth2AccessToken&gt; postAccessToken(Principal principal, @RequestParam Map&lt;String, String&gt; parameters) throws HttpRequestMethodNotSupportedException {         if (!(principal instanceof Authentication)) {             throw new InsufficientAuthenticationException("There is no client authentication. Try adding an appropriate authentication filter.");         } else {             String clientId = this.getClientId(principal);             ClientDetails authenticatedClient = this.getClientDetailsService().loadClientByClientId(clientId);             TokenRequest tokenRequest = this.getOAuth2RequestFactory().createTokenRequest(parameters, authenticatedClient);             if (clientId != null &amp;&amp; !clientId.equals("") &amp;&amp; !clientId.equals(tokenRequest.getClientId())) {                 throw new InvalidClientException("Given client ID does not match authenticated client");             } else {                 if (authenticatedClient != null) {                     this.oAuth2RequestValidator.validateScope(tokenRequest, authenticatedClient);                 }                  if (!StringUtils.hasText(tokenRequest.getGrantType())) {                     throw new InvalidRequestException("Missing grant type");                 } else if (tokenRequest.getGrantType().equals("implicit")) {                     //这里不支持implicit模式获取token                     throw new InvalidGrantException("Implicit grant type not supported from token endpoint");                 } else {                     if (this.isAuthCodeRequest(parameters) &amp;&amp; !tokenRequest.getScope().isEmpty()) {                         this.logger.debug("Clearing scope of incoming token request");                         tokenRequest.setScope(Collections.emptySet());                     }                      if (this.isRefreshTokenRequest(parameters)) {                         tokenRequest.setScope(OAuth2Utils.parseParameterList((String)parameters.get("scope")));                     }                      OAuth2AccessToken token = this.getTokenGranter().grant(tokenRequest.getGrantType(), tokenRequest);                     if (token == null) {                         throw new UnsupportedGrantTypeException("Unsupported grant type: " + tokenRequest.getGrantType());                     } else {                         return this.getResponse(token);                     }                 }             }         }     }      ...... }</code></pre> <p>抛开校验逻辑，这段代码比较重要的就是下面几行。</p> <p>1、首先查询了客户端信息（对应的数据库表就是oauth_client_details）</p> <p>2、接下来用客户端信息和request中的参数构建了一个TokenRequest对象，</p> <p>3、最后以tokenRequest作为参数，生成了我们最终需要的token.</p> <p>显然，这里最重要的部分就是this.getTokenGranter().grant()方法</p> <pre><code class="language-java">...... ClientDetails authenticatedClient = this.getClientDetailsService().loadClientByClientId(clientId); TokenRequest tokenRequest = this.getOAuth2RequestFactory().createTokenRequest(parameters, authenticatedClient); ...... OAuth2AccessToken token = this.getTokenGranter().grant(tokenRequest.getGrantType(), tokenRequest);</code></pre> <p>关于TokenRequest，我们通过它的构造器基本上就可以了解这个对象包含了哪些属性。</p> <pre><code class="language-java">    public TokenRequest(Map&lt;String, String&gt; requestParameters, String clientId, Collection&lt;String&gt; scope, String grantType) {         this.setClientId(clientId);         this.setRequestParameters(requestParameters);         this.setScope(scope);         this.grantType = grantType;     }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而对于 this.getTokenGranter()，它的具体实现是在AuthorizationServerEndpointsConfigurer#tokenGranter()方法，那么接下来的重点源码就是AuthorizationServerEndpointsConfigurer类了。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至于为什么具体实现是上面这个方法，可以看TokenEndpoint 实例在初始化时的设置。 在AuthorizationServerEndpointsConfiguration.java 有这样一段代码。（有一点我不太明白，@Bean 和 @Componet 都是将bean注册到spring容器中，为什么可以同时存在）</p> <pre><code class="language-java">    @Bean     public TokenEndpoint tokenEndpoint() throws Exception {         TokenEndpoint tokenEndpoint = new TokenEndpoint();         tokenEndpoint.setClientDetailsService(clientDetailsService);         tokenEndpoint.setProviderExceptionHandler(exceptionTranslator());         tokenEndpoint.setTokenGranter(tokenGranter());//设置token生成器         tokenEndpoint.setOAuth2RequestFactory(oauth2RequestFactory());         tokenEndpoint.setOAuth2RequestValidator(oauth2RequestValidator());         tokenEndpoint.setAllowedRequestMethods(allowedTokenEndpointRequestMethods());         return tokenEndpoint;     }</code></pre> <h2>3 AuthorizationServerEndpointsConfigurer</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringSecurity实现OAuth2分为两个服务，Authorization Server和Resource Server分别作为授权服务器和资源服务器，我们在配置授权服务器的时候会有如下配置。显然这里的配置就是为了生成token使用的。</p> <pre><code>    @Override     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {         endpoints                 .pathMapping("/oauth/token","/clonetx/token")                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)//允许的请求方式                 //tokenStore默认内存存储，重启服务token就会失效                  .tokenStore(new InMemoryTokenStore())                 //.accessTokenConverter(jwtAccessTokenConverter())                  //用于配置密码式的授权方式，如果不设置，密码模式请求token是，token为null,TokenEndpoint会提示不支持password授权模式                 //其实这里配置就是parent AuthenticationManager                 //.authenticationManager(authenticationManager())                 /*.tokenGranter(new TokenGranter() {                     @Override                     public OAuth2AccessToken grant(String s, TokenRequest tokenRequest) {                         return null;                     }                 })*/         ;     }</code></pre> <p>在分析this.getTokenGranter().grant()方法的源码之前，我们先看下 TokenGranter 的类图。</p> <p><img fetchpriority="high" decoding="async" alt="" height="310" src="http://img.555519.xyz/uploads3/20220723/992a4d3cde3b9a97ea3d6b2022d26e7e.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过类图，能够清晰的看到，TokenGranter 有6个实现类，其中通过名称我们就能知道，其中5个实现类分别对应refresh_token、client_credentials、password、authorization_code、implicit几种grantType。（其中implicit模式不由/oauth/token处理，具体可以看上面略过的校验逻辑，这里不进行展开）。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们带着剩下的 CompositeTokenGranter 实现类来看下面这段代码，可以知道，如果配置AuthorizationServerEndpointsConfigurer endpoints的时侯没有指定token生成器，那么默认就会使用 CompositeTokenGranter</p> <pre><code class="language-java">    private TokenGranter tokenGranter() {         if (tokenGranter == null) {             tokenGranter = new TokenGranter() {                 private CompositeTokenGranter delegate;                  @Override                 public OAuth2AccessToken grant(String grantType, TokenRequest tokenRequest) {                     if (delegate == null) {                         // 获取 oauth2 的 5 种 token 生成器                         delegate = new CompositeTokenGranter(getDefaultTokenGranters());                     }                     // 把auth2 的 5 种 token 生成器遍历了一次，根据grantType 选择对应的生成器，都不满足的就返回空                     return delegate.grant(grantType, tokenRequest);                 }             };         }         return tokenGranter;     }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显然，CompositeTokenGranter是那 5 种 token 生成器的代理类，根据 grantType 来选择对应的生成器，并通过代理对象的grant()方法生成token。（这里我们需要关注一下 tokenServices() 方法，后面生成token的逻辑就在它的实现代码中。可以发现endpoints配置中没有指定就会默认DefaultTokenServices，当然对于其它配置也是一样的，不在endpoints配置中指定就会取默认的，这里就不展开说明了）</p> <pre><code class="language-java">     private List&lt;TokenGranter&gt; getDefaultTokenGranters() {         ClientDetailsService clientDetails = clientDetailsService();         //设置了产生token的service         AuthorizationServerTokenServices tokenServices = tokenServices();         AuthorizationCodeServices authorizationCodeServices = authorizationCodeServices();         OAuth2RequestFactory requestFactory = requestFactory();         //token 生成器         List&lt;TokenGranter&gt; tokenGranters = new ArrayList&lt;TokenGranter&gt;();         //N# 1 授权码模式token生成器         tokenGranters.add(new AuthorizationCodeTokenGranter(tokenServices, authorizationCodeServices, clientDetails,                 requestFactory));         //N# 2 刷新token 生成器         tokenGranters.add(new RefreshTokenGranter(tokenServices, clientDetails, requestFactory));         //N# 3 隐藏式生成器         ImplicitTokenGranter implicit = new ImplicitTokenGranter(tokenServices, clientDetails, requestFactory);         tokenGranters.add(implicit);         //N# 4 客户端模式生成器         tokenGranters.add(new ClientCredentialsTokenGranter(tokenServices, clientDetails, requestFactory));         if (authenticationManager != null) {//密码模式要求自定义一个authenticationManager parent             //N# 5 密码式生成器             tokenGranters.add(new ResourceOwnerPasswordTokenGranter(authenticationManager, tokenServices,                     clientDetails, requestFactory));         }         return tokenGranters;     }        private AuthorizationServerTokenServices tokenServices() {         if (tokenServices != null) {             return tokenServices;         }         this.tokenServices = createDefaultTokenServices();         return tokenServices;     }        private DefaultTokenServices createDefaultTokenServices() {         DefaultTokenServices tokenServices = new DefaultTokenServices();         tokenServices.setTokenStore(tokenStore());         tokenServices.setSupportRefreshToken(true);         tokenServices.setReuseRefreshToken(reuseRefreshToken);         tokenServices.setClientDetailsService(clientDetailsService());         tokenServices.setTokenEnhancer(tokenEnhancer());//token增强器         addUserDetailsService(tokenServices, this.userDetailsService);         return tokenServices;     }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;继续跟踪 delegate.grant() 方法，我们会发现，无论是无论是哪种授权模式，都会调用 AbstractTokenGranter中的grant方法。</p> <h2>4 AbstractTokenGranter</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下面代码中的tokenServices 在 getDefaultTokenGranters()#tokenServices() 方法中已经指定，没指定默认就是DefaultTokenServices。</p> <pre><code class="language-java">     public OAuth2AccessToken grant(String grantType, TokenRequest tokenRequest) {         if (!this.grantType.equals(grantType)) {             return null;         } else {             String clientId = tokenRequest.getClientId();             ClientDetails client = this.clientDetailsService.loadClientByClientId(clientId);             this.validateGrantType(grantType, client);             this.logger.debug("Getting access token for: " + clientId);             return this.getAccessToken(client, tokenRequest);         }     }          protected OAuth2AccessToken getAccessToken(ClientDetails client, TokenRequest tokenRequest) {         return this.tokenServices.createAccessToken(this.getOAuth2Authentication(client, tokenRequest));     }         //这里RefreshTokenGranter是个例外，重写了getAccessToken 方法     //@Override 	//protected OAuth2AccessToken getAccessToken(ClientDetails client, TokenRequest tokenRequest) { 	//	  String refreshToken = tokenRequest.getRequestParameters().get("refresh_token"); 	//	  return getTokenServices().refreshAccessToken(refreshToken, tokenRequest); 	//}</code></pre> <h2>5 DefaultTokenServices</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分析这段代码，首先是尝试从 tokenStore 中获取token，简单看一下TokenStore的部分实现类，就能推测出不同的实现类其实就是把token存放在不同的地方，默认是内存中，也是可以在endpoints配置的。</p> <p><img decoding="async" alt="" height="151" src="http://img.555519.xyz/uploads3/20220723/ff170c8ee72975a550dfd4a96aea0b03.jpg"></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那么这段逻辑就是，判断一下是否已经为这个authentication生成过token，如果已经存在token，判断是否已经过期，没过期就返回这个token；否则就把 refreshToken 和 existingAccessToken从存储中先清理掉。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后在来判断 refreshToken，如果不存在，说明以前没认证过，那就先生成一个refreshToken，如果存在但是过期了，也重新生成一个refreshToken。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后就是利用 refreshToken 和 authentication重新生成一个accessToken了。然后再把新的token放到存储中。</p> <pre><code class="language-java">    @Transactional     public OAuth2AccessToken createAccessToken(OAuth2Authentication authentication) throws AuthenticationException {         OAuth2AccessToken existingAccessToken = this.tokenStore.getAccessToken(authentication);         OAuth2RefreshToken refreshToken = null;         if (existingAccessToken != null) {             if (!existingAccessToken.isExpired()) {                 this.tokenStore.storeAccessToken(existingAccessToken, authentication);                 return existingAccessToken;             }              if (existingAccessToken.getRefreshToken() != null) {                 refreshToken = existingAccessToken.getRefreshToken();                 this.tokenStore.removeRefreshToken(refreshToken);             }              this.tokenStore.removeAccessToken(existingAccessToken);         }          if (refreshToken == null) {             refreshToken = this.createRefreshToken(authentication);         } else if (refreshToken instanceof ExpiringOAuth2RefreshToken) {             ExpiringOAuth2RefreshToken expiring = (ExpiringOAuth2RefreshToken)refreshToken;             if (System.currentTimeMillis() &gt; expiring.getExpiration().getTime()) {                 refreshToken = this.createRefreshToken(authentication);             }         }          OAuth2AccessToken accessToken = this.createAccessToken(authentication, refreshToken);         this.tokenStore.storeAccessToken(accessToken, authentication);         refreshToken = accessToken.getRefreshToken();         if (refreshToken != null) {             this.tokenStore.storeRefreshToken(refreshToken, authentication);         }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到这里我们终于一层层的揭开了SpringSecurity Oauth2令牌生成的面纱，上面我们在注释中有提到过RefreshTokenGranter是个例外，它重写了getAccessToken 方法，但最终的实现也是调用的下面代码。</p> <pre><code class="language-java">    private OAuth2AccessToken createAccessToken(OAuth2Authentication authentication, OAuth2RefreshToken refreshToken) { 		DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(UUID.randomUUID().toString()); 		int validitySeconds = getAccessTokenValiditySeconds(authentication.getOAuth2Request()); 		if (validitySeconds &gt; 0) { 			token.setExpiration(new Date(System.currentTimeMillis() + (validitySeconds * 1000L))); 		} 		token.setRefreshToken(refreshToken); 		token.setScope(authentication.getOAuth2Request().getScope());  		return accessTokenEnhancer != null ? accessTokenEnhancer.enhance(token, authentication) :</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们看到accessToken原来就是个uuid。</p> <pre><code>客户端授权模式token例子 {     "access_token": "b1394c16-0b9a-4101-b0ba-9237dbeb27ae",     "token_type": "bearer",     "expires_in": 1526,     "scope": "test" }</code></pre> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不过到这并没完，还有一个扎眼的 accessTokenEnhancer.enhance(token, authentication)方法。我们上文在createDefaultTokenServices()的代码中，看到初始化tokenServices时设置了一个TokenEnhancer，见名知意，它可以对 token 进行额外的处理。这就不得不提到 JWT了，我们下次开一篇单独分析TokenEnhancer。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100947.htm">Python 一网打尽＜排序算法＞之先从玩转冒泡排序开始</a></p>
+                                        <p>下一个：<a href="/news/article-101701.htm">兰州狗狗市场（兰州市的狗市场在哪）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-95904.htm" title="动物疫苗厂家有哪些品牌的 动物疫苗厂家有哪些品牌的好">动物疫苗厂家有哪些品牌的 动物疫苗厂家有哪些品牌的好</a></li>
+                        <li class="py-2"><a href="/news/article-92180.htm" title="java 退出_JVM安全退出（如何优雅的关闭java服务）">java 退出_JVM安全退出（如何优雅的关闭java服务）</a></li>
+                        <li class="py-2"><a href="/news/article-97303.htm" title="动物疫苗种类及研究进展情况表（动物疫苗的概念）">动物疫苗种类及研究进展情况表（动物疫苗的概念）</a></li>
+                        <li class="py-2"><a href="/news/article-88417.htm" title="淮北宠物店（淮北宠物店招聘）">淮北宠物店（淮北宠物店招聘）</a></li>
+                        <li class="py-2"><a href="/news/article-87026.htm" title="学美容要学多久才能出师相信广州一路时尚好（美容学校一般几年毕业全上广州一路时尚好）">学美容要学多久才能出师相信广州一路时尚好（美容学校一般几年毕业全上广州一路时尚好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-free-subscribe-node.htm" title="印度免费VPN | 4月20日21.5M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点地址分享">印度免费VPN | 4月20日21.5M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-100947.htm" title="Python 一网打尽＜排序算法＞之先从玩转冒泡排序开始">Python 一网打尽＜排序算法＞之先从玩转冒泡排序开始</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-16-free-high-speed-nodes.htm" title="印度免费VPN | 4月16日21.3M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址分享">印度免费VPN | 4月16日21.3M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-node-subscribe-links.htm" title="印度免费VPN | 3月29日18.1M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址分享">印度免费VPN | 3月29日18.1M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-subscribe-node.htm" title="印度免费VPN | 4月3日21.5M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址分享">印度免费VPN | 4月3日21.5M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small"><a href="/">印度免费VPN 节点订阅中文官网</a> 版权所有 Powered by WordPress</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayx/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayx/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayx/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayx/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayx/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayx/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

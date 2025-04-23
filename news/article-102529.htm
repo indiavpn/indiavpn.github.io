@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://indiavpn.github.io/news/article-102529.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Meta Tags -->
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>AspNetCore配置多环境log4net配置文件</title>
+        <meta name="description" content="在之前的文章中有讲到AspNetCore多环境配置文件的应用，我们根据自己多种环境分别配置多个appsettings.$EnvironmentName.json文件。 在实际的开发中我们可能会遇到不只" />
+        <link rel="icon" href="/assets/website/img/v2rayx/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="印度免费VPN 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://indiavpn.github.io/news/article-102529.htm" />
+    <meta property="og:site_name" content="印度免费VPN 节点订阅中文官网" />
+    <meta property="og:title" content="AspNetCore配置多环境log4net配置文件" />
+    <meta property="og:image" content="https://indiavpn.github.io/uploads/20240905/d36578efebc2805f0b4800c6d2a2d683.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:44:07" />
+    <meta property="og:updated_time" content="2025-04-23T08:44:07" />
+        <meta property="og:description" content="在之前的文章中有讲到AspNetCore多环境配置文件的应用，我们根据自己多种环境分别配置多个appsettings.$EnvironmentName.json文件。 在实际的开发中我们可能会遇到不只" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="AspNetCore配置多环境log4net配置文件">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXP0PN9SNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EXP0PN9SNQ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/">
+                        <span>印度免费VPN</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>AspNetCore配置多环境log4net配置文件</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <img class="decoration-star" src="/assets/website/img/v2rayx/decoration-star.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				</h1> <p>在之前的文章中有讲到AspNetCore多环境配置文件的应用，我们根据自己多种环境分别配置多个<code>appsettings.$EnvironmentName.json</code>文件。<br /> 在实际的开发中我们可能会遇到不只一个配置文件，如当我们使用log4net日志库时，喜欢使用单独的<code>log4net.config</code>配置文件。并且我们还遇到不同环境下的配置文件还存在差异。这时我们可能可以效仿<code>appsettings.json</code>多环境配置的风格实现多环境配置文件。</p> </h1> <p>新建Web项目<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d99f705ba64b13c94a46290dd7dfe733.jpg" alt="AspNetCore配置多环境log4net配置文件"><br /> 安装<code>Microsoft.Extensions.Logging.Log4Net.AspNetCore</code><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3bacf878d4b30571542c15a042051537.jpg" alt="AspNetCore配置多环境log4net配置文件"></p> <p>创建两个环境的配置文件分别如图，并设置文件属性使其在发布时能够复制到根目录<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/28bd15c4fb93e07f92935acaf3f8bec0.jpg" alt="AspNetCore配置多环境log4net配置文件"></p> <p>两个配置文件内容如下，例如我们这里生产环境的配置文件多增加一个<code>KafkaAppender</code>使日志发送至<code>kafka</code>消息丢列中，然后<code>kafka</code>的消费者将日志消费至<code>ES集群</code>,而本地开发的日志则没必要进行上传ES。</p> <pre><code class="language-xml">&lt;!--log4net.config--&gt; &lt;?xml version="1.0" encoding="utf-8" ?&gt; &lt;log4net&gt;   &lt;!-- If you are looking here and want more output, first thing to do is change root/priority/@value to "INFO" or "ALL". --&gt;   &lt;root&gt;     Value of priority may be ALL, DEBUG, INFO, WARN, ERROR, FATAL, OFF.     &lt;priority value="ALL" /&gt;     &lt;appender-ref ref="error-file" /&gt;     &lt;appender-ref ref="debug-file" /&gt;     &lt;appender-ref ref="KafkaAppender" /&gt;   &lt;/root&gt;    &lt;!-- Example of turning on the output from a component or namespace. --&gt;   &lt;logger name="Common"&gt;     &lt;appender-ref ref="debugger"/&gt;     &lt;priority value="DEBUG" /&gt;   &lt;/logger&gt;      &lt;appender name="KafkaAppender" type="log4net.Kafka.Appender.KafkaAppender, log4net.Kafka.Appender"&gt;     &lt;KafkaSettings&gt;       &lt;brokers&gt;         &lt;add value="127.0.0.1:9092" /&gt;       &lt;/brokers&gt;       &lt;topic type="log4net.Layout.PatternLayout"&gt;         &lt;conversionPattern value="kafka.logstash" /&gt;       &lt;/topic&gt;     &lt;/KafkaSettings&gt;     &lt;layout type="log4net.Layout.PatternLayout"&gt;       &lt;conversionPattern value="%date %level% [%t] %logger - %message" /&gt;     &lt;/layout&gt;   &lt;/appender&gt;      &lt;appender name="debugger" type="log4net.Appender.DebugAppender"&gt;     &lt;!-- Sends log messages to Visual Studio if attached. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;layout type="log4net.Layout.SimpleLayout" /&gt;   &lt;/appender&gt;    &lt;appender name="debug-file" type="log4net.Appender.RollingFileAppender"&gt;     &lt;param name="Encoding" value="utf-8" /&gt;     &lt;file value="Logs/debug" /&gt;     &lt;appendToFile value="true" /&gt;     &lt;!-- Immediate flush on error log, to avoid data loss with sudden termination. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;staticLogFileName value="false" /&gt;     &lt;rollingStyle value="Date" /&gt;     &lt;datepattern value="-yyyy.MM.dd'.log'" /&gt;     &lt;!-- Prevents Orchard.exe from displaying locking debug messages. --&gt;     &lt;lockingModel type="log4net.Appender.FileAppender+MinimalLock" /&gt;     &lt;layout type="log4net.Layout.PatternLayout"&gt;       &lt;conversionPattern value="%date %level% [%property{trace}] %logger - %message%newline" /&gt;     &lt;/layout&gt;   &lt;/appender&gt;    &lt;appender name="error-file" type="log4net.Appender.RollingFileAppender"&gt;     &lt;param name="Encoding" value="utf-8" /&gt;     &lt;file value="Logs/error" /&gt;     &lt;appendToFile value="true" /&gt;     &lt;!-- Immediate flush on error log, to avoid data loss with sudden termination. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;staticLogFileName value="false" /&gt;     &lt;rollingStyle value="Date" /&gt;     &lt;datepattern value="-yyyy.MM.dd'.log'" /&gt;     &lt;!-- Prevents Orchard.exe from displaying locking debug messages. --&gt;     &lt;lockingModel type="log4net.Appender.FileAppender+MinimalLock" /&gt;     &lt;filter type="log4net.Filter.LevelRangeFilter"&gt;       &lt;!-- Only ERROR and FATAL log messages end up in this target, even if child loggers accept lower priority. --&gt;       &lt;levelMin value="ERROR" /&gt;     &lt;/filter&gt;     &lt;layout type="log4net.Layout.PatternLayout"&gt;       &lt;conversionPattern value="%date [%t] %logger - %message [%P{Url}]%newline" /&gt;     &lt;/layout&gt;   &lt;/appender&gt;  &lt;/log4net&gt;</code></pre> <pre><code class="language-xml">&lt;!--log4net.Development.config--&gt; &lt;?xml version="1.0" encoding="utf-8" ?&gt; &lt;log4net&gt;   &lt;!-- If you are looking here and want more output, first thing to do is change root/priority/@value to "INFO" or "ALL". --&gt;   &lt;root&gt;     Value of priority may be ALL, DEBUG, INFO, WARN, ERROR, FATAL, OFF.     &lt;priority value="ALL" /&gt;     &lt;appender-ref ref="error-file" /&gt;     &lt;appender-ref ref="debug-file" /&gt;   &lt;/root&gt;    &lt;!-- Example of turning on the output from a component or namespace. --&gt;   &lt;logger name="Common"&gt;     &lt;appender-ref ref="debugger"/&gt;     &lt;priority value="DEBUG" /&gt;   &lt;/logger&gt;      &lt;appender name="debugger" type="log4net.Appender.DebugAppender"&gt;     &lt;!-- Sends log messages to Visual Studio if attached. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;layout type="log4net.Layout.SimpleLayout" /&gt;   &lt;/appender&gt;    &lt;appender name="debug-file" type="log4net.Appender.RollingFileAppender"&gt;     &lt;param name="Encoding" value="utf-8" /&gt;     &lt;file value="Logs/debug" /&gt;     &lt;appendToFile value="true" /&gt;     &lt;!-- Immediate flush on error log, to avoid data loss with sudden termination. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;staticLogFileName value="false" /&gt;     &lt;rollingStyle value="Date" /&gt;     &lt;datepattern value="-yyyy.MM.dd'.log'" /&gt;     &lt;!-- Prevents Orchard.exe from displaying locking debug messages. --&gt;     &lt;lockingModel type="log4net.Appender.FileAppender+MinimalLock" /&gt;     &lt;layout type="log4net.Layout.PatternLayout"&gt;       &lt;conversionPattern value="%date %level% [%property{trace}] %logger - %message%newline" /&gt;     &lt;/layout&gt;   &lt;/appender&gt;    &lt;appender name="error-file" type="log4net.Appender.RollingFileAppender"&gt;     &lt;param name="Encoding" value="utf-8" /&gt;     &lt;file value="Logs/error" /&gt;     &lt;appendToFile value="true" /&gt;     &lt;!-- Immediate flush on error log, to avoid data loss with sudden termination. --&gt;     &lt;immediateFlush value="true" /&gt;     &lt;staticLogFileName value="false" /&gt;     &lt;rollingStyle value="Date" /&gt;     &lt;datepattern value="-yyyy.MM.dd'.log'" /&gt;     &lt;!-- Prevents Orchard.exe from displaying locking debug messages. --&gt;     &lt;lockingModel type="log4net.Appender.FileAppender+MinimalLock" /&gt;     &lt;filter type="log4net.Filter.LevelRangeFilter"&gt;       &lt;!-- Only ERROR and FATAL log messages end up in this target, even if child loggers accept lower priority. --&gt;       &lt;levelMin value="ERROR" /&gt;     &lt;/filter&gt;     &lt;layout type="log4net.Layout.PatternLayout"&gt;       &lt;conversionPattern value="%date [%t] %logger - %message [%P{Url}]%newline" /&gt;     &lt;/layout&gt;   &lt;/appender&gt;  &lt;/log4net&gt;</code></pre> <p>在<code>Program.cs</code>中添加log4net配置如下图</p> <pre><code>// ===============多环境log4net配置=============== IWebHostEnvironment environment = builder.Environment; var configName = "log4net" + (environment.IsProduction() ? string.Empty : "." + environment.EnvironmentName) + ".config"; builder.Logging.AddLog4Net(configName, watch: true); // ===============多环境log4net配置===============</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0c83c704e49b8221aa4ba4e6c352bebc.jpg" alt="AspNetCore配置多环境log4net配置文件"><br /> 现在所有的配置都完成了。</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102528.htm">TypeScript与JavaScript的区别</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-subscribe-node.htm" title="印度免费VPN | 4月3日21.5M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址分享">印度免费VPN | 4月3日21.5M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-94469.htm" title="动物疫苗的作用是什么呢（动物疫苗的作用是什么呢视频）">动物疫苗的作用是什么呢（动物疫苗的作用是什么呢视频）</a></li>
+                        <li class="py-2"><a href="/news/article-95903.htm" title="人用针剂和兽用针剂有什么区别（兽用注射器和人用注射器有什么区别）">人用针剂和兽用针剂有什么区别（兽用注射器和人用注射器有什么区别）</a></li>
+                        <li class="py-2"><a href="/news/article-85602.htm" title="petite-vue源码剖析-逐行解读@vue-reactivity之effect">petite-vue源码剖析-逐行解读@vue-reactivity之effect</a></li>
+                        <li class="py-2"><a href="/news/article-101700.htm" title="SpringSecurity之OAuth2 令牌accessToken的生成过程">SpringSecurity之OAuth2 令牌accessToken的生成过程</a></li>
+                        <li class="py-2"><a href="/news/article-91128.htm" title="洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）">洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）</a></li>
+                        <li class="py-2"><a href="/news/article-94468.htm" title="要开一家宠物医院需要到哪些部门办理哪些证件方可开业（开宠物医院的基本要求）">要开一家宠物医院需要到哪些部门办理哪些证件方可开业（开宠物医院的基本要求）</a></li>
+                        <li class="py-2"><a href="/news/article-101701.htm" title="兰州狗狗市场（兰州市的狗市场在哪）">兰州狗狗市场（兰州市的狗市场在哪）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-node-subscribe.htm" title="印度免费VPN | 4月12日18.9M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享">印度免费VPN | 4月12日18.9M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-v2ray.htm" title="印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享">印度免费VPN | 3月30日21.3M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small"><a href="/">印度免费VPN 节点订阅中文官网</a> 版权所有 Powered by WordPress</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayx/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayx/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayx/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayx/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayx/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayx/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
