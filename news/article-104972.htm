@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://indiavpn.github.io/news/article-104972.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- SEO Meta Tags -->
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>Runtime: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same</title>
+        <meta name="description" content="pytorch框架在写test.py时，报了一个输入，输出类型不一致；  RuntimeError: Input type (torch.FloatTensor) and weight type (t" />
+        <link rel="icon" href="/assets/website/img/v2rayx/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="印度免费VPN 节点订阅中文官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://indiavpn.github.io/news/article-104972.htm" />
+    <meta property="og:site_name" content="印度免费VPN 节点订阅中文官网" />
+    <meta property="og:title" content="Runtime: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same" />
+    <meta property="og:image" content="https://indiavpn.github.io/uploads/20240905/c512419b0929bb97a77cd6af5a43db05.webp" />
+        <meta property="og:release_date" content="2025-04-26T07:40:41" />
+    <meta property="og:updated_time" content="2025-04-26T07:40:41" />
+        <meta property="og:description" content="pytorch框架在写test.py时，报了一个输入，输出类型不一致；  RuntimeError: Input type (torch.FloatTensor) and weight type (t" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Runtime: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/v2rayx/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXP0PN9SNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EXP0PN9SNQ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/">
+                        <span>印度免费VPN</span>
+                        </a>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Runtime: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-2">
+        <img class="decoration-star" src="/assets/website/img/v2rayx/decoration-star.svg" alt="alternative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>pytorch框架在写test.py时，报了一个输入，输出类型不一致；</p> <blockquote> <pre>RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor </pre> </blockquote> <p>输出类型是torch.cuda.FloatTensor,是因为模型训练在gpu上跑的；</p> <p>所以在加载模型时，指定设备为cpu这样就与输入类型保持一致。指定代码：</p> <pre>map_location=torch.device("cpu")</pre> <p>例如：</p> <pre><code class="language-python">module = torch.load("vincent_0.pth", map_location=torch.device("cpu"))</code></pre> <p>然后问题解决了。</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-104054.htm">动物疫苗防疫站上班时间是几点 动物疫苗防疫站上班时间是几点到几点</a></p>
+                                        <p>下一个：<a href="/news/article-104973.htm">宠物粮食品牌前十名排行榜有哪些呢视频讲解（宠物粮食品牌都有什么）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-clash-v2ray-ss-ssr.htm" title="印度免费VPN | 4月2日20.9M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点地址分享">印度免费VPN | 4月2日20.9M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-91128.htm" title="洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）">洗砂机全套设备价格表（泥浆分离机 泥浆离心脱水机）</a></li>
+                        <li class="py-2"><a href="/news/article-83578.htm" title="猫咪宠物疫苗有效期是多久（宠物猫疫苗大概多少钱）">猫咪宠物疫苗有效期是多久（宠物猫疫苗大概多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-96642.htm" title="动物疫苗销售大客户经理（兽用疫苗销售人员）">动物疫苗销售大客户经理（兽用疫苗销售人员）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-node-share.htm" title="印度免费VPN | 4月27日22.2M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点地址分享">印度免费VPN | 4月27日22.2M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-91129.htm" title="宝宝被猫抓了一下红色划痕要打针吗（宝宝被猫抓了一下红色划痕要打针吗图片）">宝宝被猫抓了一下红色划痕要打针吗（宝宝被猫抓了一下红色划痕要打针吗图片）</a></li>
+                        <li class="py-2"><a href="/news/article-89878.htm" title="打了疫苗的动物用不用打狂犬疫苗了呢（动物打过疫苗被咬还有事啊）">打了疫苗的动物用不用打狂犬疫苗了呢（动物打过疫苗被咬还有事啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-node-share-links.htm" title="印度免费VPN | 4月10日20.1M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点地址分享">印度免费VPN | 4月10日20.1M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/news/article-93622.htm" title="Vue内置组件的component标签">Vue内置组件的component标签</a></li>
+                        <li class="py-2"><a href="/news/article-100349.htm" title="工厂养猫聚财还是破财（厂里养猫会带来好运吗）">工厂养猫聚财还是破财（厂里养猫会带来好运吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    &nbsp;
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p class="p-small"><a href="/">印度免费VPN 节点订阅中文官网</a> 版权所有 Powered by WordPress</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/v2rayx/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/v2rayx/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/v2rayx/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/v2rayx/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/v2rayx/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="/assets/website/js/frontend/v2rayx/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
