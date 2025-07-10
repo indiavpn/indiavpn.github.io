@@ -1,4 +1,4 @@
-# 印度免费VPN | 7月4日21.7M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点地址分享  更新时间 2025-07-04 15:06:29
+# 印度免费VPN | 7月10日18.4M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点地址分享  更新时间 2025-07-10 09:12:54
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://indiavpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://indiavpn.github.io/uploads/2025/07/0-20250704.yaml
-- https://indiavpn.github.io/uploads/2025/07/1-20250704.yaml
-- https://indiavpn.github.io/uploads/2025/07/2-20250704.yaml
-- https://indiavpn.github.io/uploads/2025/07/3-20250704.yaml
-- https://indiavpn.github.io/uploads/2025/07/4-20250704.yaml
+- https://indiavpn.github.io/uploads/2025/07/0-20250710.yaml
+- https://indiavpn.github.io/uploads/2025/07/1-20250710.yaml
+- https://indiavpn.github.io/uploads/2025/07/2-20250710.yaml
+- https://indiavpn.github.io/uploads/2025/07/3-20250710.yaml
+- https://indiavpn.github.io/uploads/2025/07/4-20250710.yaml
 
 ### V2ray订阅链接
 
-- https://indiavpn.github.io/uploads/2025/07/0-20250704.txt
-- https://indiavpn.github.io/uploads/2025/07/1-20250704.txt
-- https://indiavpn.github.io/uploads/2025/07/2-20250704.txt
-- https://indiavpn.github.io/uploads/2025/07/3-20250704.txt
-- https://indiavpn.github.io/uploads/2025/07/4-20250704.txt
+- https://indiavpn.github.io/uploads/2025/07/0-20250710.txt
+- https://indiavpn.github.io/uploads/2025/07/1-20250710.txt
+- https://indiavpn.github.io/uploads/2025/07/2-20250710.txt
+- https://indiavpn.github.io/uploads/2025/07/3-20250710.txt
+- https://indiavpn.github.io/uploads/2025/07/4-20250710.txt
 
 ### Sing-box订阅链接
 
-- https://indiavpn.github.io/uploads/2025/07/20250704.json
+- https://indiavpn.github.io/uploads/2025/07/20250710.json
 
 ## 更多clash节点订阅 ：
 
