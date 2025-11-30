@@ -1,4 +1,4 @@
-# 印度免费VPN | 11月21日21.5M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅节点地址分享  更新时间 2025-11-21 09:06:18
+# 印度免费VPN | 11月30日19.6M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点地址分享  更新时间 2025-11-30 09:53:58
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://indiavpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://indiavpn.github.io/uploads/2025/11/0-20251121.yaml
-- https://indiavpn.github.io/uploads/2025/11/1-20251121.yaml
-- https://indiavpn.github.io/uploads/2025/11/2-20251121.yaml
-- https://indiavpn.github.io/uploads/2025/11/3-20251121.yaml
-- https://indiavpn.github.io/uploads/2025/11/4-20251121.yaml
+- https://indiavpn.github.io/uploads/2025/11/0-20251130.yaml
+- https://indiavpn.github.io/uploads/2025/11/1-20251130.yaml
+- https://indiavpn.github.io/uploads/2025/11/2-20251130.yaml
+- https://indiavpn.github.io/uploads/2025/11/3-20251130.yaml
+- https://indiavpn.github.io/uploads/2025/11/4-20251130.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://indiavpn.github.io/uploads/2025/11/0-20251121.txt
-- https://indiavpn.github.io/uploads/2025/11/1-20251121.txt
-- https://indiavpn.github.io/uploads/2025/11/2-20251121.txt
-- https://indiavpn.github.io/uploads/2025/11/3-20251121.txt
-- https://indiavpn.github.io/uploads/2025/11/4-20251121.txt
+- https://indiavpn.github.io/uploads/2025/11/0-20251130.txt
+- https://indiavpn.github.io/uploads/2025/11/1-20251130.txt
+- https://indiavpn.github.io/uploads/2025/11/2-20251130.txt
+- https://indiavpn.github.io/uploads/2025/11/3-20251130.txt
+- https://indiavpn.github.io/uploads/2025/11/4-20251130.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://indiavpn.github.io/uploads/2025/11/20251121.json
+- https://indiavpn.github.io/uploads/2025/11/20251130.json
 
 ## 更多Clash节点订阅 ：
 

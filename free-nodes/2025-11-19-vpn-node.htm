@@ -284,29 +284,9 @@ Shadowrocket允许用户自定义规则，根据不同的需求选择性地代�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 XTLS 模式如何提升性能？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
     <div class="panel-body">
-        VLESS + XTLS 模式可以在加密传输中减少 TLS 握手和数据复制过程，从而显著降低延迟并减少 CPU 占用。这种优化特别适合高带宽或高并发的场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
-    <div class="panel-body">
-        Reality 使用公私钥对进行认证，应生成唯一的公私钥对并妥善保存私钥，公钥可部署在服务端配置中。避免在多个服务共享同一密钥，定期轮换密钥并通过安全通道传输公钥以防泄露。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray QUIC 模式适合哪些网络环境？</h5></div>
-    <div class="panel-body">
-        QUIC 基于 UDP 协议，支持多路复用和零握手，适合高丢包和不稳定网络环境。可提升视频、游戏和即时通讯流量的稳定性和访问速度，提高网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏体验？</h5></div>
-    <div class="panel-body">
-        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 如何启用 TUN 模式？</h5></div>
-    <div class="panel-body">
-        在 Mihomo 的配置文件中启用 `tun:` 模块并安装系统驱动即可实现全局代理。TUN 模式可将所有系统流量导向代理核心，实现真正意义上的全局加速。<hr />    </div>
+        PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络流量？</h5></div>
@@ -319,9 +299,14 @@ Shadowrocket允许用户自定义规则，根据不同的需求选择性地代�
         Mihomo 日志可显示节点连接、请求延迟和错误信息。通过分析日志，可以判断节点是否不可达、TLS 握手失败或规则匹配异常，从而快速定位问题并解决。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 支持按应用分流流量吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏体验？</h5></div>
     <div class="panel-body">
-        支持。Surfboard 可通过策略组和规则文件将不同应用的流量分配到指定节点，保证游戏、视频和浏览器流量走最优节点，提高访问速度和网络稳定性。<hr />    </div>
+        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 如何启用 TUN 模式？</h5></div>
+    <div class="panel-body">
+        在 Mihomo 的配置文件中启用 `tun:` 模块并安装系统驱动即可实现全局代理。TUN 模式可将所有系统流量导向代理核心，实现真正意义上的全局加速。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 的延迟测试准确吗？</h5></div>
@@ -329,9 +314,24 @@ Shadowrocket允许用户自定义规则，根据不同的需求选择性地代�
         Matsuri 的延迟测试使用 ICMP 与 TCP 双重检测方式，可较准确反映节点实际响应时间。不过受网络波动影响，建议多次测试并结合速度测试结果综合判断。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
+    <div class="panel-heading"><h5>V2Ray QUIC 模式适合哪些网络环境？</h5></div>
     <div class="panel-body">
-        PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。    </div>
+        QUIC 基于 UDP 协议，支持多路复用和零握手，适合高丢包和不稳定网络环境。可提升视频、游戏和即时通讯流量的稳定性和访问速度，提高网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
+    <div class="panel-body">
+        Reality 使用公私钥对进行认证，应生成唯一的公私钥对并妥善保存私钥，公钥可部署在服务端配置中。避免在多个服务共享同一密钥，定期轮换密钥并通过安全通道传输公钥以防泄露。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 的 XTLS 模式如何提升性能？</h5></div>
+    <div class="panel-body">
+        VLESS + XTLS 模式可以在加密传输中减少 TLS 握手和数据复制过程，从而显著降低延迟并减少 CPU 占用。这种优化特别适合高带宽或高并发的场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 支持按应用分流流量吗？</h5></div>
+    <div class="panel-body">
+        支持。Surfboard 可通过策略组和规则文件将不同应用的流量分配到指定节点，保证游戏、视频和浏览器流量走最优节点，提高访问速度和网络稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -360,16 +360,16 @@ Shadowrocket允许用户自定义规则，根据不同的需求选择性地代�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-10-31-node-share.htm" title="印度免费VPN | 10月31日19.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点地址分享">印度免费VPN | 10月31日19.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-10-vpn-free.htm" title="印度免费VPN | 10月10日21.9M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 10月10日21.9M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-12-free-node-subscribe-links.htm" title="印度免费VPN | 11月12日20.8M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点订阅节点地址分享">印度免费VPN | 11月12日20.8M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-4-vpn-proxy.htm" title="印度免费VPN | 10月4日19.8M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅节点地址分享">印度免费VPN | 10月4日19.8M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-vpn-proxy.htm" title="印度免费VPN | 10月3日22.1M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点地址分享">印度免费VPN | 10月3日22.1M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-vpn-free.htm" title="印度免费VPN | 10月25日21.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 10月25日21.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-mianfei-vpn.htm" title="印度免费VPN | 11月7日20.6M/S|免费Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点订阅节点地址分享">印度免费VPN | 11月7日20.6M/S|免费Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-vpn-node.htm" title="印度免费VPN | 10月11日22.7M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点订阅节点地址分享">印度免费VPN | 10月11日22.7M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-share-vpn.htm" title="印度免费VPN | 11月5日19.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月5日19.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-26-vpn-free.htm" title="印度免费VPN | 10月26日22M/S|免费Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享">印度免费VPN | 10月26日22M/S|免费Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-22-node-share.htm" title="印度免费VPN | 10月22日19.3M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 10月22日19.3M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-18-vpn-node.htm" title="印度免费VPN | 10月18日18.1M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点地址分享">印度免费VPN | 10月18日18.1M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-11-vpn-github.htm" title="印度免费VPN | 11月11日22.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 11月11日22.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-vpn-node.htm" title="印度免费VPN | 11月4日18.6M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享">印度免费VPN | 11月4日18.6M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-20-vpn-github.htm" title="印度免费VPN | 11月20日21.4M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 11月20日21.4M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-17-share-vpn.htm" title="印度免费VPN | 10月17日19M/S|免费V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 10月17日19M/S|免费V2ray节点/Clash节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-vpn-free.htm" title="印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享">印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-node-share.htm" title="印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享</a></li>
                     </ul>
     </div>
 </div>
@@ -381,7 +381,7 @@ Shadowrocket允许用户自定义规则，根据不同的需求选择性地代�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
