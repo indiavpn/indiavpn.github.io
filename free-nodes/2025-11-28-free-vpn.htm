@@ -155,9 +155,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
+    <div class="panel-heading"><h5>Netch 全局代理与规则代理如何选择？</h5></div>
     <div class="panel-body">
-        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
+        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据需求灵活选择模式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 协议和混淆组合如何优化稳定性？</h5></div>
+    <div class="panel-body">
+        根据网络封锁情况选择合适协议和混淆组合，如 tls1.2_ticket_auth 模拟 HTTPS 流量。合理组合可提高抗封锁能力和稳定性，保证节点长期可用并优化网络连接。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 协议混淆如何增强安全性？</h5></div>
+    <div class="panel-body">
+        SSR 可通过选择混淆方式和协议组合隐藏真实流量特征，降低被 DPI 检测和封锁风险。合理配置可提高节点隐蔽性和长期可用性，保证科学上网体验稳定可靠。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
+    <div class="panel-body">
+        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Sing-box 中设置多个 outbound 实现策略路由？</h5></div>
+    <div class="panel-body">
+        在 sing-box 的配置中定义多个 outbound 对象并为 routing 模块配置 rules，将不同目的地或应用流量指向对应 outbound，从而实现分流、负载均衡或故障转移等复杂路由策略。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
@@ -170,39 +190,19 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         TUN 模式直接拦截 IP 层流量，实现全局代理，而系统代理通常仅影响支持代理的应用。TUN 更适合游戏、视频或全局科学上网场景，确保所有流量经过代理节点。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何设置多入口实现不同访问控制？</h5></div>
-    <div class="panel-body">
-        通过定义多个 inbound，对不同端口绑定不同的 tag 并在路由中匹配流量。可针对内网用户、远程用户或特定 IP 段应用不同规则，实现灵活访问控制与流量隔离。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用对即时通讯的优势是什么？</h5></div>
     <div class="panel-body">
         多路复用可让多个短连接共享同一通道，减少握手次数和加密开销，提高吞吐量和连接稳定性。适合即时通讯应用，保证消息快速传输和稳定接收。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 协议混淆如何增强安全性？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
     <div class="panel-body">
-        SSR 可通过选择混淆方式和协议组合隐藏真实流量特征，降低被 DPI 检测和封锁风险。合理配置可提高节点隐蔽性和长期可用性，保证科学上网体验稳定可靠。<hr />    </div>
+        Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 协议和混淆组合如何优化稳定性？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 如何设置多入口实现不同访问控制？</h5></div>
     <div class="panel-body">
-        根据网络封锁情况选择合适协议和混淆组合，如 tls1.2_ticket_auth 模拟 HTTPS 流量。合理组合可提高抗封锁能力和稳定性，保证节点长期可用并优化网络连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 全局代理与规则代理如何选择？</h5></div>
-    <div class="panel-body">
-        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据需求灵活选择模式。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Sing-box 中设置多个 outbound 实现策略路由？</h5></div>
-    <div class="panel-body">
-        在 sing-box 的配置中定义多个 outbound 对象并为 routing 模块配置 rules，将不同目的地或应用流量指向对应 outbound，从而实现分流、负载均衡或故障转移等复杂路由策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组如何保证低延迟？</h5></div>
-    <div class="panel-body">
-        将节点按延迟、地区或用途分组，并启用策略组，系统会根据节点延迟和健康状态自动选择最佳节点。保证网页浏览、视频播放和游戏流量的低延迟和稳定连接。    </div>
+        通过定义多个 inbound，对不同端口绑定不同的 tag 并在路由中匹配流量。可针对内网用户、远程用户或特定 IP 段应用不同规则，实现灵活访问控制与流量隔离。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -231,16 +231,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-9-node-share.htm" title="印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-16-vpn-proxy.htm" title="印度免费VPN | 10月16日23M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 10月16日23M/S|免费SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-top-vpn-node.htm" title="印度免费VPN | 11月1日19M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 11月1日19M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-10-vpn-free.htm" title="印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享">印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-vpn-node.htm" title="印度免费VPN | 11月22日20.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 11月22日20.7M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-vpn-node.htm" title="印度免费VPN | 11月6日18.3M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 11月6日18.3M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-11-vpn-github.htm" title="印度免费VPN | 11月11日22.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 11月11日22.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-28-free-vpn.htm" title="印度免费VPN | 11月28日20.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅节点地址分享">印度免费VPN | 11月28日20.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-vpn-free.htm" title="印度免费VPN | 11月15日19.3M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 11月15日19.3M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-share-vpn.htm" title="印度免费VPN | 11月5日19.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月5日19.8M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-26-free-vpn-node.htm" title="印度免费VPN | 11月26日19.9M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 11月26日19.9M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-vpn-free.htm" title="印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享">印度免费VPN | 11月10日22.1M/S|免费Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-6-share-vpn.htm" title="印度免费VPN | 12月6日19.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 12月6日19.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-free-vpn.htm" title="印度免费VPN | 12月2日19.7M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点订阅节点地址分享">印度免费VPN | 12月2日19.7M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-17-share-vpn.htm" title="印度免费VPN | 11月17日20.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 11月17日20.8M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-free-node-subscribe.htm" title="印度免费VPN | 11月30日18.3M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址分享">印度免费VPN | 11月30日18.3M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-vpn-free.htm" title="印度免费VPN | 12月3日21.3M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点地址分享">印度免费VPN | 12月3日21.3M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-node-share.htm" title="印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月9日22M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅节点地址分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-vpn-node.htm" title="印度免费VPN | 11月19日20.1M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 11月19日20.1M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享</a></li>
                     </ul>
     </div>
 </div>
@@ -252,10 +252,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
