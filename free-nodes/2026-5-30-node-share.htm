@@ -165,9 +165,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 可以同时管理多少节点？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
     <div class="panel-body">
-        Mihomo 可以管理大量节点，理论上没有固定上限。通过策略组和节点分类，用户可以轻松管理数百个节点，同时进行测速和自动切换。<hr />    </div>
+        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-body">
+        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 可以兼容旧版 Hiddify 吗？</h5></div>
@@ -175,14 +180,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Hiddify Next 完全向下兼容旧版配置，用户可直接导入原有 JSON 或 YAML 文件。系统会自动检测格式并进行迁移，非常适合升级旧环境到新版客户端。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化海外网站访问？</h5></div>
-    <div class="panel-body">
-        策略组可根据延迟和地理位置自动选择最佳节点访问海外网站。结合路由规则，可实现国内流量直连，国外流量通过代理，提高访问速度，降低延迟和连接不稳定风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash.Meta 与原版 Clash 有何不同？</h5></div>
     <div class="panel-body">
         Clash.Meta 是社区优化版本，支持更多传输协议，如 Hysteria、TUIC、Reality 等。它还增强了 DNS 处理逻辑和脚本分流能力，适合追求极致速度和灵活规则配置的高级用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密在封锁严格地区的作用？</h5></div>
+    <div class="panel-body">
+        AEAD 加密防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的延迟检测如何帮助节点选择？</h5></div>
@@ -195,14 +200,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         伪装域名必须真实可访问并有有效证书，否则客户端无法建立连接。正确配置可隐藏真实流量特征，降低被封锁风险，保证节点长期稳定可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化海外网站访问？</h5></div>
     <div class="panel-body">
-        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在封锁严格地区的作用？</h5></div>
-    <div class="panel-body">
-        AEAD 加密防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户体验。<hr />    </div>
+        策略组可根据延迟和地理位置自动选择最佳节点访问海外网站。结合路由规则，可实现国内流量直连，国外流量通过代理，提高访问速度，降低延迟和连接不稳定风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密在高封锁网络的作用？</h5></div>
@@ -210,9 +210,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         AEAD 加密可防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 可以同时管理多少节点？</h5></div>
     <div class="panel-body">
-        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。    </div>
+        Mihomo 可以管理大量节点，理论上没有固定上限。通过策略组和节点分类，用户可以轻松管理数百个节点，同时进行测速和自动切换。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -262,16 +262,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-28-top-vpn-node.htm" title="印度免费VPN | 5月28日18.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 5月28日18.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-vpn-node.htm" title="印度免费VPN | 5月8日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享">印度免费VPN | 5月8日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-27-vpn-proxy.htm" title="印度免费VPN | 5月27日20.9M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点地址分享">印度免费VPN | 5月27日20.9M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-26-vpn-github.htm" title="印度免费VPN | 5月26日20.2M/S|免费Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 5月26日20.2M/S|免费Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-11-free-vpn.htm" title="印度免费VPN | 5月11日19.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点订阅节点地址分享">印度免费VPN | 5月11日19.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-node-subscribe-links.htm" title="印度免费VPN | 5月7日21.8M/S|免费V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 5月7日21.8M/S|免费V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-1-node-share.htm" title="印度免费VPN | 6月1日21.5M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 6月1日21.5M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-6-3-free-vpn.htm" title="印度免费VPN | 6月3日18.4M/S|免费Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点地址分享">印度免费VPN | 6月3日18.4M/S|免费Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-2-top-vpn-node.htm" title="印度免费VPN | 6月2日19.2M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点地址分享">印度免费VPN | 6月2日19.2M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-23-vpn-free.htm" title="印度免费VPN | 5月23日21.8M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址分享">印度免费VPN | 5月23日21.8M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-13-free-node-subscribe.htm" title="印度免费VPN | 5月13日22.2M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点订阅节点地址分享">印度免费VPN | 5月13日22.2M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-5-free-node-subscribe-links.htm" title="印度免费VPN | 6月5日21.8M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 6月5日21.8M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-22-free-node-subscribe-links.htm" title="印度免费VPN | 5月22日19.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点订阅节点地址分享">印度免费VPN | 5月22日19.1M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-4-free-node-subscribe.htm" title="印度免费VPN | 6月4日19.6M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址分享">印度免费VPN | 6月4日19.6M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-19-top-vpn.htm" title="印度免费VPN | 5月19日21.7M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 5月19日21.7M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-vpn-node.htm" title="印度免费VPN | 5月9日22.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点订阅节点地址分享">印度免费VPN | 5月9日22.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-26-vpn-github.htm" title="印度免费VPN | 5月26日20.2M/S|免费Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 5月26日20.2M/S|免费Clash节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-vpn-github.htm" title="印度免费VPN | 5月5日20M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点地址分享">印度免费VPN | 5月5日20M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-28-top-vpn-node.htm" title="印度免费VPN | 5月28日18.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 5月28日18.1M/S|免费Shadowrocket节点/Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -283,7 +283,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
