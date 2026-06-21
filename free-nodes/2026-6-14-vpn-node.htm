@@ -157,8 +157,39 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2026-6-13-share-vpn.htm">印度免费VPN | 6月13日18.7M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a></p>
+        <p>下一个：<a href="/free-nodes/2026-6-15-free-vpn.htm">印度免费VPN | 6月15日18.4M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点订阅节点地址分享</a></p>
     </div>
 <h4>FAQ</h4>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何配置？</h5></div>
+    <div class="panel-body">
+        用户可添加订阅 URL，Nekoray 会定期下载并替换旧节点。这样可保证节点列表始终最新，减少手动维护，提高使用效率，同时保证网络访问稳定可靠。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 的延迟测速功能如何提高网络体验？</h5></div>
+    <div class="panel-body">
+        PassWall2 可以定期测速节点延迟，并结合策略组自动选择最优节点。这样在访问网站或视频时，可以始终使用延迟最低的线路，提高网络稳定性和速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Nginx 上为 Vmess/WS 配置反向代理与 TLS？</h5></div>
+    <div class="panel-body">
+        在 Nginx 中配置 HTTPS 站点并将特定路径（如 /ray）反向代理到 V2Ray 的 WebSocket 端口，确保 proxy_set_header 设置正确（Host、X-Real-IP 等）。同时使用 certbot 获取并自动续期 TLS 证书以维护安全。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayN 如何开启系统代理？</h5></div>
+    <div class="panel-body">
+        打开 V2RayN 后，点击右下角托盘图标，选择“设置系统代理”或“开启全局模式”。这样系统所有网络请求都会通过代理转发。适用于浏览器、下载器等需要全局代理的场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
+    <div class="panel-body">
+        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。<hr />    </div>
+</div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>何为 multiplex (mux)，启用后会有哪些利弊？</h5></div>
     <div class="panel-body">
@@ -170,44 +201,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         虽然 SSR 的开发早已停止，但由于它配置简单且部分节点仍然兼容，仍有一定使用场景。不过建议用户逐步迁移到更安全的新协议如 VLESS 或 Trojan，以获得更佳性能与隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess MUX 功能如何改善短连接延迟？</h5></div>
-    <div class="panel-body">
-        VMess MUX 多路复用可以将多个短连接共享同一 TCP 或 QUIC 隧道，减少重复握手和连接延迟，特别适合游戏、即时通讯或频繁请求的场景，有效提升响应速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的延迟测速功能如何提高网络体验？</h5></div>
-    <div class="panel-body">
-        PassWall2 可以定期测速节点延迟，并结合策略组自动选择最优节点。这样在访问网站或视频时，可以始终使用延迟最低的线路，提高网络稳定性和速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何配置？</h5></div>
-    <div class="panel-body">
-        用户可添加订阅 URL，Nekoray 会定期下载并替换旧节点。这样可保证节点列表始终最新，减少手动维护，提高使用效率，同时保证网络访问稳定可靠。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Nginx 上为 Vmess/WS 配置反向代理与 TLS？</h5></div>
-    <div class="panel-body">
-        在 Nginx 中配置 HTTPS 站点并将特定路径（如 /ray）反向代理到 V2Ray 的 WebSocket 端口，确保 proxy_set_header 设置正确（Host、X-Real-IP 等）。同时使用 certbot 获取并自动续期 TLS 证书以维护安全。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些好处？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个短连接共享同一 QUIC 通道，减少握手延迟和资源消耗。在高并发或频繁短连接场景下，能显著提升吞吐量和稳定性，尤其适合游戏或即时通讯应用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayN 如何开启系统代理？</h5></div>
-    <div class="panel-body">
-        打开 V2RayN 后，点击右下角托盘图标，选择“设置系统代理”或“开启全局模式”。这样系统所有网络请求都会通过代理转发。适用于浏览器、下载器等需要全局代理的场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
     <div class="panel-body">
         Reality 使用公私钥对进行认证，应生成唯一的公私钥对并妥善保存私钥，公钥可部署在服务端配置中。避免在多个服务共享同一密钥，定期轮换密钥并通过安全通道传输公钥以防泄露。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些好处？</h5></div>
     <div class="panel-body">
-        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。    </div>
+        多路复用允许多个短连接共享同一 QUIC 通道，减少握手延迟和资源消耗。在高并发或频繁短连接场景下，能显著提升吞吐量和稳定性，尤其适合游戏或即时通讯应用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -257,16 +258,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-6-1-node-share.htm" title="印度免费VPN | 6月1日21.5M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 6月1日21.5M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-4-free-node-subscribe.htm" title="印度免费VPN | 6月4日19.6M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址分享">印度免费VPN | 6月4日19.6M/S|免费SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-20-vpn-github.htm" title="印度免费VPN | 5月20日21.8M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 5月20日21.8M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-17-mianfei-vpn.htm" title="印度免费VPN | 5月17日19.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 5月17日19.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-node-subscribe-links.htm" title="印度免费VPN | 5月7日21.8M/S|免费V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 5月7日21.8M/S|免费V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-2-top-vpn-node.htm" title="印度免费VPN | 6月2日19.2M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点地址分享">印度免费VPN | 6月2日19.2M/S|免费Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-16-vpn-node.htm" title="印度免费VPN | 5月16日19.2M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点订阅节点地址分享">印度免费VPN | 5月16日19.2M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-3-free-node-subscribe.htm" title="印度免费VPN | 5月3日22.7M/S|免费SSR节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 5月3日22.7M/S|免费SSR节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-vpn-node.htm" title="印度免费VPN | 5月8日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享">印度免费VPN | 5月8日20.3M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-29-vpn-proxy.htm" title="印度免费VPN | 5月29日18.5M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 5月29日18.5M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-9-vpn-node.htm" title="印度免费VPN | 5月9日22.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点订阅节点地址分享">印度免费VPN | 5月9日22.2M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-13-share-vpn.htm" title="印度免费VPN | 6月13日18.7M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享">印度免费VPN | 6月13日18.7M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-27-vpn-proxy.htm" title="印度免费VPN | 5月27日20.9M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点地址分享">印度免费VPN | 5月27日20.9M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点订阅节点地址分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-25-share-vpn.htm" title="印度免费VPN | 5月25日18.1M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点订阅节点地址分享">印度免费VPN | 5月25日18.1M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-23-vpn-free.htm" title="印度免费VPN | 5月23日21.8M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址分享">印度免费VPN | 5月23日21.8M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-15-vpn-github.htm" title="印度免费VPN | 5月15日19.8M/S|免费Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 5月15日19.8M/S|免费Clash节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-vpn-github.htm" title="印度免费VPN | 5月5日20M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点地址分享">印度免费VPN | 5月5日20M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-7-vpn-github.htm" title="印度免费VPN | 6月7日19.3M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享">印度免费VPN | 6月7日19.3M/S|免费Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-14-vpn-node.htm" title="印度免费VPN | 6月14日20M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 6月14日20M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -278,7 +279,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
