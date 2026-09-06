@@ -305,9 +305,14 @@ A：入门门槛略高，但配置好后非常稳定。初学者可参考各类�
         TUN 模式拦截系统 IP 层流量，实现全局代理。游戏流量通过低延迟节点传输，减少丢包和延迟，提高游戏体验的流畅性和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化流量？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
     <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 延迟检测如何提高网络稳定性？</h5></div>
+    <div class="panel-body">
+        WinXray 定期测速节点延迟，并结合策略组自动切换到延迟最低节点。这样可保证网页、视频和游戏流量稳定快速访问，减少卡顿和掉线，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
@@ -325,9 +330,9 @@ A：入门门槛略高，但配置好后非常稳定。初学者可参考各类�
         Trojan-Go 在配置文件中通过启用 mux 参数即可实现多路复用。此功能允许多个连接共享同一隧道，减少握手延迟并提升整体传输效率，尤其在移动网络中表现出色。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化流量？</h5></div>
     <div class="panel-body">
-        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何使用 Sing-box 配合 Clash Rules 实现精细分流？</h5></div>
@@ -335,19 +340,14 @@ A：入门门槛略高，但配置好后非常稳定。初学者可参考各类�
         将 Clash 的 rules 段提取出来转换为 Sing-box 的 routing 格式，或直接引用 rule-providers 源。Sing-box 的路由引擎支持更复杂的条件匹配，可结合 GeoIP 与 keyword 实现精细分流策略。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 延迟检测如何提高网络稳定性？</h5></div>
-    <div class="panel-body">
-        WinXray 定期测速节点延迟，并结合策略组自动切换到延迟最低节点。这样可保证网页、视频和游戏流量稳定快速访问，减少卡顿和掉线，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
     <div class="panel-body">
-        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。    </div>
+        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
+    <div class="panel-body">
+        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -395,16 +395,16 @@ A：入门门槛略高，但配置好后非常稳定。初学者可参考各类�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-1.htm" title="印度免费VPN | 8月1日18.9M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享">印度免费VPN | 8月1日18.9M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-free-node-subscribe.htm" title="印度免费VPN | 8月2日22.6M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月2日22.6M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-3.htm" title="印度免费VPN | 8月3日19.4M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点订阅节点地址分享">印度免费VPN | 8月3日19.4M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-28-node-share.htm" title="印度免费VPN | 7月28日18.2M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 7月28日18.2M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-14-vpn-proxy.htm" title="印度免费VPN | 7月14日22.3M/S|免费Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 7月14日22.3M/S|免费Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-4-vpn-node.htm" title="印度免费VPN | 8月4日18.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享">印度免费VPN | 8月4日18.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-vpn-node.htm" title="印度免费VPN | 7月26日22.1M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点订阅节点地址分享">印度免费VPN | 7月26日22.1M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-18-node-share.htm" title="印度免费VPN | 7月18日22.6M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 7月18日22.6M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-share-vpn.htm" title="印度免费VPN | 7月19日20.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 7月19日20.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-13-vpn-github.htm" title="印度免费VPN | 7月13日18.3M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点地址分享">印度免费VPN | 7月13日18.3M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="印度免费VPN | 8月7日20.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月7日20.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-29.htm" title="印度免费VPN | 8月29日20.2M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 8月29日20.2M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-8-23.htm" title="印度免费VPN | 8月23日18.3M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点地址分享">印度免费VPN | 8月23日18.3M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-15.htm" title="印度免费VPN | 8月15日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 8月15日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-8-31.htm" title="印度免费VPN | 8月31日19.8M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月31日19.8M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-9-3.htm" title="印度免费VPN | 9月3日18M/S|免费Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 9月3日18M/S|免费Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-top-vpn-node.htm" title="印度免费VPN | 8月30日21.2M/S|免费Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 8月30日21.2M/S|免费Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-free-node-subscribe.htm" title="印度免费VPN | 9月4日20.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点订阅节点地址分享">印度免费VPN | 9月4日20.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-node-subscribe.htm" title="印度免费VPN | 8月10日18M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享">印度免费VPN | 8月10日18M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-vpn-free.htm" title="印度免费VPN | 8月28日22.1M/S|免费Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 8月28日22.1M/S|免费Singbox节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -416,10 +416,10 @@ A：入门门槛略高，但配置好后非常稳定。初学者可参考各类�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>

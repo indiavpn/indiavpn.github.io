@@ -339,29 +339,14 @@ Telegram官方群组或渠道通知</p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
-    <div class="panel-body">
-        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 节点分类管理有什么作用？</h5></div>
     <div class="panel-body">
         节点分类可按地区、延迟或用途分组，结合策略组实现自动分流。方便管理大量节点，快速选择最优节点，提高访问速度和连接稳定性，优化网络管理效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
+    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
     <div class="panel-body">
-        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 分流规则如何优化游戏体验？</h5></div>
-    <div class="panel-body">
-        QuantumultX 可按端口、协议或应用设置分流规则，将游戏流量走低延迟节点。结合策略组自动切换，可保证游戏连接稳定，减少掉线和延迟，提高流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
-    <div class="panel-body">
-        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
+        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议和混淆组合如何优化稳定性？</h5></div>
@@ -374,9 +359,14 @@ Telegram官方群组或渠道通知</p>
         Shadowrocket 会定期测速节点延迟和丢包率，并结合策略组自动切换最佳节点。保证游戏流量走低延迟节点，减少延迟和掉线，提高游戏流畅度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 的节点自动测速功能如何配置？</h5></div>
+    <div class="panel-heading"><h5>QuantumultX 分流规则如何优化游戏体验？</h5></div>
     <div class="panel-body">
-        Matsuri 可以设置测速周期和节点列表，程序会自动测试延迟和速度并排序。用户可根据测试结果选择最佳节点，提高网络访问速度和使用体验。<hr />    </div>
+        QuantumultX 可按端口、协议或应用设置分流规则，将游戏流量走低延迟节点。结合策略组自动切换，可保证游戏连接稳定，减少掉线和延迟，提高流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
+    <div class="panel-body">
+        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 WebSocket 传输与 TCP 有何区别？</h5></div>
@@ -384,9 +374,19 @@ Telegram官方群组或渠道通知</p>
         WebSocket 通过 HTTP 封装 TCP 流量，适合伪装成正常网页请求，增加隐蔽性。相比原生 TCP，可更好地绕过封锁和 DPI 检测，但略增加协议开销。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
+    <div class="panel-body">
+        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 如何为不同用户设置流量限制？</h5></div>
     <div class="panel-body">
-        管理员可为每个用户设置独立带宽限制和流量配额。超过限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提升整体网络效率和公平性。    </div>
+        管理员可为每个用户设置独立带宽限制和流量配额。超过限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提升整体网络效率和公平性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 的节点自动测速功能如何配置？</h5></div>
+    <div class="panel-body">
+        Matsuri 可以设置测速周期和节点列表，程序会自动测试延迟和速度并排序。用户可根据测试结果选择最佳节点，提高网络访问速度和使用体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -434,16 +434,16 @@ Telegram官方群组或渠道通知</p>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-8-13.htm" title="印度免费VPN | 8月13日23M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月13日23M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-free-vpn-node.htm" title="印度免费VPN | 7月30日22.9M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 7月30日22.9M/S|免费SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-4-vpn-node.htm" title="印度免费VPN | 8月4日18.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享">印度免费VPN | 8月4日18.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-7-29.htm" title="印度免费VPN | 7月29日21.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 7月29日21.5M/S|免费Clash节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-28-node-share.htm" title="印度免费VPN | 7月28日18.2M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享">印度免费VPN | 7月28日18.2M/S|免费Clash节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-vpn-node.htm" title="印度免费VPN | 7月20日19.7M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 7月20日19.7M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-node-share.htm" title="印度免费VPN | 8月14日21.3M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享">印度免费VPN | 8月14日21.3M/S|免费Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-20-top-vpn-node.htm" title="印度免费VPN | 8月20日21.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享">印度免费VPN | 8月20日21.3M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-15.htm" title="印度免费VPN | 8月15日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 8月15日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-19.htm" title="印度免费VPN | 8月19日18.1M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月19日18.1M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-free-node-subscribe.htm" title="印度免费VPN | 9月4日20.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点订阅节点地址分享">印度免费VPN | 9月4日20.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点订阅节点地址分享</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="印度免费VPN | 8月7日20.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月7日20.7M/S|免费Singbox节点/SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-vpn-proxy.htm" title="印度免费VPN | 8月8日18.6M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点地址分享">印度免费VPN | 8月8日18.6M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅节点地址分享</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-6-vpn-proxy.htm" title="印度免费VPN | 8月6日20.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享">印度免费VPN | 8月6日20.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-16-free-vpn-node.htm" title="印度免费VPN | 8月16日21M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点订阅节点地址分享">印度免费VPN | 8月16日21M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Clash节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-node-subscribe.htm" title="印度免费VPN | 8月10日18M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享">印度免费VPN | 8月10日18M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-8-13.htm" title="印度免费VPN | 8月13日23M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月13日23M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Trojan节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-node-share.htm" title="印度免费VPN | 9月2日19.5M/S|免费Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点地址分享">印度免费VPN | 9月2日19.5M/S|免费Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点地址分享</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-8-31.htm" title="印度免费VPN | 8月31日19.8M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点地址分享">印度免费VPN | 8月31日19.8M/S|免费SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点订阅节点地址分享</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -455,10 +455,10 @@ Telegram官方群组或渠道通知</p>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
